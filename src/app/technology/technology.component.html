@@ -1,0 +1,76 @@
+<div class="titles">
+    <svg class="titles__icon"> <use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg>
+    <span class="titles__label">Technology</span>
+</div>
+
+<div class="technology">
+
+    <!-- Programming -->
+    <div class="section-tech">
+        <fieldset>
+            <legend>
+                <span> Programming </span>
+            </legend>
+
+            <!-- Start: Language -->
+            <span class="tech-mini-title"> Language </span>
+            <div class="tech-content">
+
+                <!-- Syahir Test -->
+                <div class="tech-list" *ngFor="let language of languages">
+                    <div class="tech-list__icon">
+                        <svg class="tech-list__icon__item"> <use [attr.href] = "language.link" ></use></svg>
+                    </div>
+                    <div class="tech-list__item">
+                        {{language.name}}
+                    </div>
+                </div>
+            </div>
+            <!-- End: Language -->
+
+
+            <!-- Start: Framework -->
+            <span class="tech-mini-title"> Framework </span>
+            <div class="tech-content">
+
+                <!--  Spring  -->
+                <div class="tech-list" *ngFor="let framework of frameworks">
+                    <div class="tech-list__icon">
+                        <svg class="tech-list__icon__item"> <use [attr.href] = "framework.link" ></use></svg>
+                    </div>
+                    <div class="tech-list__item">
+                        {{framework.name}}
+                    </div>
+                </div>
+            </div>
+            <!-- End: Framework -->
+
+
+        </fieldset>
+    </div>
+
+
+    <!-- Section Tools -->
+    <div class="section-techs">
+        <fieldset>
+            <legend>
+                <span> Tools </span>
+            </legend>
+
+            <!-- Start: Tool -->
+            <div class="tech-content">
+                <div class="tech-list tools" *ngFor="let tool of tools">
+                    <div class="tech-list__icon">
+                        <svg class="tech-list__icon__item"> <use [attr.href] = "tool.link" ></use></svg>
+                    </div>
+                    <div class="tech-list__item">
+                        {{tool.name}}
+                    </div>
+                </div>
+            </div>
+            <!-- End: Tool -->
+
+        </fieldset>
+    </div>
+
+</div>

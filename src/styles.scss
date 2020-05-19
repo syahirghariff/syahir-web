@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "_base";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1 rem = 10 px, 10px/16px = 62.5% */
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%; // 8/16 
+    }
+}
+
+body {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+    background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
+    background-color: whitesmoke;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 110rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    height: 100%;
+    padding-bottom: 10px;
+    @media only screen and (max-width: $bp-largest) {
+        margin: 2rem auto;
+        max-width: 95%; // width container is 120rem
+        width: 95%;
+    }
+}
+
+.titles {
+    text-transform: uppercase;
+    color: darkgrey;
+    display: flex;
+    justify-self: start;
+    margin-left: 2.3rem;
+    margin-left: 2.3rem;
+    margin-top: 2.5rem;
+    &__icon {
+        fill: var(--color-grey-dark-3);
+        display: flex;
+        justify-content: stretch;
+        align-self: center;
+        align-content: center;
+        width: 10px;
+        height: 10px;
+    }
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,96 @@
+@import "../../_base";
+.technology {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-tech {
+    margin: 1.2rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #a3bded;
+    width: 100%;
+    background: white;
+    // padding: 2rem;
+    padding: .8rem;
+    border-radius: 3px;
+    box-shadow: var(--shadow-light);
+    & legend {
+        margin-left: 1.8rem;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        padding: .3rem .8rem;
+        border-radius: 4px;
+        color: white;
+        font-weight: 900;
+        background-image: linear-gradient(to left, #a3bded 0%, #6991c7 100%);
+        box-shadow: var(--shadow);
+    }
+}
+
+.tech-mini-title {
+    margin-top: 1.8rem;
+    margin-left: 1rem;
+    display: flex;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.tech-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media only screen and (max-width: $bp-custom-smallest) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.tech-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: .7rem .7rem;
+    align-content: center;
+    flex-basis: 150px;
+    // flex-grow: 3;
+    // min-width: 100px;
+    flex-wrap: wrap;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    &__item {
+        display: flex;
+        flex: 1;
+        font-size: 1.4rem;
+        padding: .5rem .7rem;
+    }
+    &__icon {
+        display: flex;
+        background: whitesmoke;
+        flex-basis: 20px;
+        justify-content: center;
+        align-items: center;
+        &__item {
+            width: 15px;
+            height: 15px;
+            padding: 2px;
+        }
+    }
+}
+
+.tools {
+    border-image-source: linear-gradient(-225deg, #B6CEE8 0%, #F578DC 100%);
+}

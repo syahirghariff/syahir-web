@@ -1,0 +1,71 @@
+.experience {
+    margin: 3rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    background: white;
+    border-radius: 3px;
+    box-shadow: var(--shadow-light);
+    background-image: linear-gradient(to top left, #dfe9f3 0%, white 100%);
+    position: relative;
+    height: 20vh;
+}
+
+.experience-dagangnet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: stretch;
+    z-index: 1;
+    height: inherit;
+    &__picture {
+        opacity: 0.1;
+        height: inherit;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        // height: 20px;
+        height: inherit;
+        overflow: hidden;
+        margin-top: 1rem;
+    }
+}
+
+.experience-content {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.job-title {
+    display: flex;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-bottom: 1px dotted #FF512F;
+    margin-bottom: 2rem;
+}
+
+.job-desc {
+    font-size: 1.5rem;
+}
+
+.job-link {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &__icon {
+        display: flex;
+        align-content: center;
+        align-self: center;
+        height: 30px;
+        width: 30px;
+        fill: var(--color-grey-dark-1);
+    }
+}
