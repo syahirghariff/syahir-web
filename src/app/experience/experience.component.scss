@@ -5,9 +5,11 @@
     background: white;
     border-radius: 3px;
     box-shadow: var(--shadow-light);
-    background-image: linear-gradient(to top left, #dfe9f3 0%, white 100%);
-    position: relative;
-    height: 20vh;
+    // background-image: linear-gradient(to top left, #dfe9f3 0%, white 100%);
+    background-image: linear-gradient(to left top, rgba(#141E30, .8), rgba(#2c3e50, 1)), url("../../assets/dagangnet.png");
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 .experience-dagangnet {
@@ -15,7 +17,7 @@
     align-items: center;
     justify-content: center;
     align-content: stretch;
-    z-index: 1;
+    z-index: 0;
     height: inherit;
     &__picture {
         opacity: 0.1;
@@ -23,8 +25,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        z-index: 1;
-        // height: 20px;
+        z-index: 0;
         height: inherit;
         overflow: hidden;
         margin-top: 1rem;
@@ -32,8 +33,7 @@
 }
 
 .experience-content {
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin: 2rem;
     position: relative;
     z-index: 3;
     display: flex;
@@ -47,10 +47,12 @@
     text-transform: uppercase;
     border-bottom: 1px dotted #FF512F;
     margin-bottom: 2rem;
+    color: white;
 }
 
 .job-desc {
     font-size: 1.5rem;
+    color: white;
 }
 
 .job-link {
@@ -66,6 +68,6 @@
         align-self: center;
         height: 30px;
         width: 30px;
-        fill: var(--color-grey-dark-1);
+        fill: white;
     }
 }

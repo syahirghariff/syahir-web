@@ -1,0 +1,21 @@
+<div class="me">
+    <div class="me__container">
+        <div class="content">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+                <div class="content-item">
+                    <svg class="content-item__icons"> <use xlink:href="../../assets/sprite.svg#icon-person"></use></svg>
+                    <input type="text" placeholder="username" id="username" formControlName="username">
+                </div>
+
+                <div class="content-item">
+                    <svg class="content-item__icons"> <use xlink:href="../../assets/sprite.svg#icon-vpn_key"></use></svg>
+                    <input type="password" placeholder="password" id="password" formControlName="password">
+                </div>
+
+                <div class="content-item">
+                    <button class="btn_login" type="submit"> ok </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
