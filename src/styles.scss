@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "_base";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import '~@angular/material/theming';
+@import '~@sweetalert2/theme-borderless/borderless.scss';
 * {
     margin: 0;
     padding: 0;
@@ -31,6 +34,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
+    font-size: 16px;
 }
 
 .container {
@@ -57,6 +61,7 @@ body {
     margin-left: 2.3rem;
     margin-left: 2.3rem;
     margin-top: 2.5rem;
+    font-size: 1.3rem;
     &__icon {
         fill: var(--color-grey-dark-3);
         display: flex;
@@ -74,3 +79,15 @@ body {
         margin-left: 5px;
     }
 }
+
+input {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 16px;
+}
+
+@include mat-core();
+$custom-theme-primary: mat-palette($mat-light-blue, 50);
+$custom-theme-accent:mat-palette($mat-pink, A200, A100, A400);
+$custom-theme-warn: mat-palette($mat-red);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);

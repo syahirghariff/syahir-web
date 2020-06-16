@@ -1,4 +1,4 @@
-<div class="me">
+<div class="me" *ngIf="isUserLogged==='false'">
     <div class="me__container">
         <div class="content">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
@@ -18,4 +18,71 @@
             </form>
         </div>
     </div>
+</div>
+
+<div *ngIf="isUserLogged==='true'">
+
+    <div class="admin-content">
+
+        <!-- Header NavBar  -->
+        <div class="navbar">
+
+            <mat-menu #appMenu="matMenu">
+
+                <!-- Profile -->
+                <button mat-menu-item (click)="onMenuClick('profile')">
+                    <span> Profile </span>
+                </button>
+
+                <!-- Education -->
+                <button mat-menu-item (click)="onMenuClick('education')">
+                    <span> Education </span>
+                </button>
+
+                <!-- Tech  -->
+                <button mat-menu-item (click)="onMenuClick('tech')">
+                    <span> Tech </span>
+                </button>
+
+                <!-- Experience  -->
+                <button mat-menu-item (click)="onMenuClick('experience')">
+                    <span> Experience </span>
+                </button>
+
+                <!-- Login Trx -->
+                <button mat-menu-item (click)="onMenuClick('loginTrx')">
+                    <span> Login Transactions </span>
+                </button>
+
+
+            </mat-menu>
+
+            <button mat-icon-button [matMenuTriggerFor]="appMenu">
+                 <span> <svg> <use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg> </span>
+            </button>
+
+            <span class="logout-btn" (click)=onLogout()> Logout </span>
+        </div>
+
+
+        <!-- Page menu - profile -->
+        <div class="menu-transition" *ngIf="isProfile" id="profile">
+
+            <span class="label-title">Profile </span>
+            <app-m-profile></app-m-profile>
+        </div>
+
+        <div class="menu-transition" *ngIf="isEducation" id="education">
+            <app-m-education></app-m-education>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
 </div>

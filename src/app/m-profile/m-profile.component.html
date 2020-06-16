@@ -1,0 +1,67 @@
+<div class="profile">
+
+
+    <!-- Profile Photo  -->
+    <div class="form-group">
+        <span class="label"> 
+            Profile Picture
+        </span>
+
+        <br *ngIf="!photo.encodeImg" />
+        <div class="profile-photo" *ngIf="photo.encodeImg">
+            <img [src]="'data:image/png;base64,' + photo.encodeImg" height="100%" alt="syahir-ghariff">
+        </div>
+
+        <label class="upload-photo" for="profile-photo">
+            <svg class="upload-photo__icon"> <use xlink:href="../../assets/sprite.svg#icon-image"></use></svg><span> Upload Photo </span>
+        </label>
+
+        <input type="file" accept="image/*" id="profile-photo" class="file-photo" (change)="onUploadImage($event)">
+
+    </div>
+
+    <!-- Profile Name  -->
+    <div class="form-group ">
+        <span class="label "> 
+            Name
+        </span>
+        <div class="form-group__input ">
+            <input type="text" [(ngModel)]="name.name">
+        </div>
+    </div>
+
+
+    <!-- Details  -->
+    <div class="form-group" *ngFor="let detail of details; index as i">
+        <span class="label"> 
+            Details {{i+1}}
+        </span>
+        <div class="form-group__input">
+            <input type="text" placeholder="Name" [(ngModel)]="detail.name">
+
+            <select [(ngModel)]="detail.active" [ngClass]="{'option-active' : detail.active === 'A', 'option-inactive' : detail.active === 'X'}"> 
+                <option value="" selected disabled> Status </option> 
+                <option value="A"> Active </option>
+                 <option value="X"> Inactive </option>
+            </select>
+        </div>
+        <div class="form-group__input">
+            <input type="text" placeholder="Svg Link" [(ngModel)]="detail.svg">
+
+            <div class="delete" (click)="onDelete(detail, i)">
+                <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Details Button  -->
+    <div class="add-more" (click)="onAddDetails()">
+        <svg class="add-more__icon"> <use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Details </span>
+    </div>
+
+    <!-- Submit button  -->
+    <div class="submit-button">
+        <button (click)="onSubmit()"> Update </button>
+    </div>
+
+</div>

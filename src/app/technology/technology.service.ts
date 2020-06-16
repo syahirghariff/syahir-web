@@ -14,7 +14,7 @@ export class TechnologyService {
     }
 
     getTechnologyList (){
-        return this.http.get('http://192.168.1.11:4200/assets/sg_technology.json');
+        return this.http.get('/assets/sg_technology.json');
     }
 
     getLanguages() {

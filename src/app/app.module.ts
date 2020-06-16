@@ -8,13 +8,22 @@ import { TechnologyComponent } from './technology/technology.component';
 import { FooterComponent } from './footer/footer.component';
 import { EducationComponent } from './education/education.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
 import { RouterModule } from '@angular/router';
 import { MeComponent } from './me/me.component';
 import { TestComponentRenderer } from '@angular/core/testing';
-import { Technology } from './model/technology';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderService } from './loader/loader.service';
+import { LoaderInterceptor } from './loader/loader.interceptor';
+import { MProfileComponent } from './m-profile/m-profile.component';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import { MEducationComponent } from './m-education/m-education.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     EducationComponent,
     ExperienceComponent,
-    MeComponent
+    MeComponent,
+    LoaderComponent,
+    MProfileComponent,
+    MEducationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,13 +44,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    MatIconModule,
     RouterModule.forRoot([
       {path:'', component: HeadersComponent},
       {path:'me', component: MeComponent},
       {path:'**', redirectTo: '', pathMatch: 'full' }
     ])
   ],
-  providers: [],
+  providers: [LoaderService, {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

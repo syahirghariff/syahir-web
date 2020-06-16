@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
-import { User } from '../model/user';
+import { MainUser } from '../interface/main-user';
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +11,7 @@ export class MeService{
 
     }
 
-    doLogin(data:any) {
-        return this.http.post('/syahirghariff/user/do_login',data);
+    doLogin(data:MainUser) {
+        return this.http.post<MainUser>('/syahirghariff/user/do_login', data);
     }
 }
