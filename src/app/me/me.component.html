@@ -65,24 +65,22 @@
         </div>
 
 
-        <!-- Page menu - profile -->
+        <!-- Page menu - Profile -->
         <div class="menu-transition" *ngIf="isProfile" id="profile">
-
             <span class="label-title">Profile </span>
             <app-m-profile></app-m-profile>
         </div>
 
+        <!-- Page menu - Education  -->
         <div class="menu-transition" *ngIf="isEducation" id="education">
+            <span class="label-title">Education </span>
             <app-m-education></app-m-education>
         </div>
 
-
-
-
+        <!-- Page menu - Tech  -->
+        <div class="menu-transition" *ngIf="isTech" id="tech">
+            <span class="label-title">Tech </span>
+            <app-m-tech></app-m-tech>
+        </div>
     </div>
-
-
-
-
-
 </div>

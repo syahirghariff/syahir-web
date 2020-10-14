@@ -6,6 +6,7 @@
     --color-grey-light-2: #f4f2f2;
     --color-grey-light-3: #f0eeee;
     --color-grey-light-4: #ccc;
+    --color-grey-light-5: #f8f8f8;
     --color-grey-dark-1: #333;
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
@@ -87,6 +88,14 @@ $bp-custom-smallest: 24.37rem; // 390/16
     color: var(--color-active) !important;
     border: 1px solid var(--color-active) !important;
     padding-left: 10px;
+    width: 100px;
+    box-shadow: var(--shadow-light);
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .option-inactive {
@@ -94,6 +103,14 @@ $bp-custom-smallest: 24.37rem; // 390/16
     color: var(--color-inactive) !important;
     border: 1px solid var(--color-inactive) !important;
     padding-left: 10px;
+    width: 100px;
+    box-shadow: var(--shadow-light);
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .label-title {
@@ -172,6 +189,7 @@ $bp-custom-smallest: 24.37rem; // 390/16
     border-radius: 3px;
     box-shadow: var(--shadow);
     transition: all .2s;
+    color: white;
     &__icon {
         fill: white;
         height: 15px;
@@ -217,4 +235,33 @@ $bp-custom-smallest: 24.37rem; // 390/16
 
 .swal-wide {
     height: 50px;
+}
+
+.btn-status-delete {
+    margin-top: 20px;
+    display: flex;
+    height: 40px;
+}
+
+.m-base {
+    background: white;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    // padding: 10px 20px 20px 20px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    background-color: var(--color-grey-light-2);
+    color: var(--color-grey-dark-1);
+}
+
+.m-list {
+    border: 1px solid var(--color-input-border);
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    background: white;
 }

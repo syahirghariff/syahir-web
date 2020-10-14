@@ -1,0 +1,46 @@
+.tech-titles {
+    text-transform: uppercase;
+    color: blue;
+    display: flex;
+    justify-self: start;
+    margin-left: 10px;
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    &__icon {
+        fill: blue;
+        display: flex;
+        justify-content: stretch;
+        align-self: center;
+        align-content: center;
+        width: 10px;
+        height: 10px;
+    }
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        margin-left: 5px;
+        font-size: 10px;
+    }
+}
+
+.tech-mini-title {
+    margin-top: 1.8rem;
+    margin-left: 1rem;
+    display: flex;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid whitesmoke;
+    color: var(--color-dark-grey-1);
+}
+
+.m-tech-list {
+    margin: 20px 0 20px 0;
+    padding: 0 20px 20px 20px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 3px;
+    // margin-left: 25px;
+}

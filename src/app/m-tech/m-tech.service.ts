@@ -5,7 +5,7 @@ import { Profile } from '../model/profile';
 @Injectable({
     providedIn: 'root'
 })
-export class MProfileService {
+export class MTechService {
 
     options = {};
 
@@ -17,15 +17,14 @@ export class MProfileService {
     }
 
     doSubmit(data: Array<Profile>) {
-        return this.http.post('/syahirghariff/profile/do_submit', data, this.options);
+        return this.http.post('/syahirghariff/tech/do_submit', data, this.options);
     }
 
-
     findAll() {
-        return this.http.get('/syahirghariff/profile/find_all');
+        return this.http.get('/syahirghariff/tech/find_all');
     }
 
     deleteById(id) {
-        return this.http.post('/syahirghariff/profile/delete_by_id', id, this.options);
+        return this.http.post('/syahirghariff/tech/delete_by_id', id, this.options);
     }
 }

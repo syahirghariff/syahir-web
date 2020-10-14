@@ -62,8 +62,10 @@ fieldset {
     align-content: center;
     margin: .7rem .7rem;
     align-content: center;
-    flex-basis: 150px;
-    // flex-grow: 3;
+    min-width: 80px;
+    // flex-basis: 150px;
+    flex-grow: 1;
+    // flex-shrink: 1;
     // min-width: 100px;
     flex-wrap: wrap;
     border: 2px solid;
@@ -73,14 +75,16 @@ fieldset {
     box-shadow: var(--shadow);
     &__item {
         display: flex;
-        flex: 1;
+        align-items: center;
+        flex-grow: 1;
         font-size: 1.4rem;
-        padding: .5rem .7rem;
+        font-size: 16px;
+        padding: .5rem 1rem;
     }
     &__icon {
         display: flex;
         background: whitesmoke;
-        flex-basis: 20px;
+        width: 30px;
         justify-content: center;
         align-items: center;
         &__item {

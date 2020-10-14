@@ -1,12 +1,14 @@
 
 export class Technology {
-    id:string; 
+    id: string;
     type: string;
-    name: string; 
+    name: string;
+    seq: number;
+    svg: string;
+    active: string;
 
-    constructor(id?: string, type?: string, name?: string) {
-        this.id = id; 
-        this.type = type; 
-        this.name = name;
+    constructor(active?: string, type?: string) {
+        this.active = active;
+        this.type = type;
     }
 }

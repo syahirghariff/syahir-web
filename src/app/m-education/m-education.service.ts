@@ -1,31 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Profile } from '../model/profile';
+import { Education } from '../model/education';
 
 @Injectable({
     providedIn: 'root'
 })
-export class MProfileService {
+export class MEducationService {
 
     options = {};
 
     constructor(private http: HttpClient) {
+
         const header = new HttpHeaders().set("Authorization", sessionStorage.getItem('userToken'));
         this.options = {
             headers: header
         }
     }
 
-    doSubmit(data: Array<Profile>) {
-        return this.http.post('/syahirghariff/profile/do_submit', data, this.options);
+    doSubmit(data: Array<Education>) {
+        return this.http.post('/syahirghariff/education/do_submit', data, this.options);
     }
 
 
     findAll() {
-        return this.http.get('/syahirghariff/profile/find_all');
+        return this.http.get('/syahirghariff/education/find_all');
     }
 
-    deleteById(id) {
-        return this.http.post('/syahirghariff/profile/delete_by_id', id, this.options);
+    deleteById(id: string) {
+        return this.http.post('/syahirghariff/education/delete_by_id', id, this.options);
     }
 }

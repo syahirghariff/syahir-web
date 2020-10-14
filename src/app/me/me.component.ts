@@ -49,7 +49,7 @@ export class MeComponent implements OnInit {
     }
     this.isProfile = false;
     this.isEducation = false;
-    this.isTech = false;
+    this.isTech = true;
     this.isExperience = false;
     this.isLoginTrx = false;
   }
@@ -96,6 +96,12 @@ export class MeComponent implements OnInit {
       title: 'Logout Successful!'
     })
 
+    this.isProfile = false;
+    this.isEducation = false;
+    this.isTech = false;
+    this.isExperience = false;
+    this.isLoginTrx = false;
+
     this.isUserLogged = 'false';
     sessionStorage.clear();
 
@@ -127,6 +133,9 @@ export class MeComponent implements OnInit {
 
       case "tech":
         this.isTech = true;
+        setTimeout(() => {
+          $('#tech').show('250');
+        })
         break;
 
       case "experience":
