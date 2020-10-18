@@ -24,6 +24,7 @@ export class MeComponent implements OnInit {
   isEducation: boolean;
   isTech: boolean;
   isExperience: boolean;
+  isSvg: boolean;
   isLoginTrx: boolean;
 
   constructor(
@@ -31,7 +32,7 @@ export class MeComponent implements OnInit {
     private meSvc: MeService,
     private loaderSvc: LoaderService
   ) {
-    
+
     this.loginForm = this.formBuilder.group({
       username: null,
       password: null
@@ -49,9 +50,10 @@ export class MeComponent implements OnInit {
     }
     this.isProfile = false;
     this.isEducation = false;
-    this.isTech = true;
+    this.isTech = false;
     this.isExperience = false;
     this.isLoginTrx = false;
+    this.isSvg = true;
   }
 
   onSubmit(data: MainUser) {
@@ -115,18 +117,19 @@ export class MeComponent implements OnInit {
     this.isTech = false;
     this.isExperience = false;
     this.isLoginTrx = false;
+    this.isSvg = false;
 
     switch (menu) {
       case "profile":
         this.isProfile = true;
-        setTimeout( () => {
+        setTimeout(() => {
           $('#profile').show('250');
         });
         break;
 
       case "education":
         this.isEducation = true;
-        setTimeout( () => {
+        setTimeout(() => {
           $('#education').show('250');
         });
         break;
@@ -137,6 +140,12 @@ export class MeComponent implements OnInit {
           $('#tech').show('250');
         })
         break;
+
+      case "svg":
+        this.isSvg = true;
+        setTimeout(() => {
+          $('#svg').show('250');
+        })
 
       case "experience":
         this.isExperience = true;

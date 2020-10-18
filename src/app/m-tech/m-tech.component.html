@@ -1,46 +1,61 @@
 <div class="m-base">
     <mat-tab-group [color]="'accent'" mat-align-tabs="center">
         <!-- #1 Languages  -->
+
+
         <mat-tab label="Languages">
+
             <!-- Mini title  -->
             <div class="tech-titles">
                 <svg class="tech-titles__icon"><use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg>
                 <span class="tech-titles__label"> Programming </span>
             </div>
 
-            <!-- Programming - Language  -->
-            <div class="m-list" *ngFor="let language of languages; index as i">
-                <!-- Name  -->
-                <div class="form-group" style="margin-top: 0">
-                    <span class="label"> Name </span>
-                    <div class="form-group__input">
-                        <input type="text" [(ngModel)]="language.name" />
-                    </div>
-                </div>
+            <div class="tech-titles">
+                <span class="muted-text" style="font-style: italic; font-size: 12px; text-transform: none;"> ** Drag item to sort </span>
+            </div>
 
-                <!-- SVG  -->
-                <div class="form-group">
-                    <span class="label"> SVG Link </span>
-                    <div class="form-group__input">
-                        <input type="text" placeholder="Svg Link" [(ngModel)]="language.link" />
-                    </div>
-                </div>
+            <div [sortablejs]="languages">
+                <!-- Programming - Language  -->
+                <mat-expansion-panel *ngFor="let language of languages; index as i" class="m-expansion-panel">
 
-                <div class="btn-status-delete">
-                    <select [(ngModel)]="language.active" [ngClass]="{'option-active' : language.active === 'A', 'option-inactive' : language.active === 'X'}">
-                            <option value="" selected disabled> Status </option>
-                            <option value="A"> Active </option>
-                            <option value="X"> Inactive </option>
-                        </select>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span *ngIf="language.name">{{language.name}}</span>
+                            <span *ngIf="!language.name" class="muted-text"> Please insert here </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
 
-                    <div class="delete" (click)="onDeleteLanguage(language, i)">
-                        <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Language Name</mat-label>
+                            <input [(ngModel)]="language.name" matInput>
+                        </mat-form-field>
                     </div>
-                </div>
+
+
+                    <!-- SVG  -->
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>SVG</mat-label>
+                            <input [(ngModel)]="language.svg" matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-status-delete">
+                        <div class="slide-toggle">
+                            <mat-slide-toggle [checked]="language.active === 'A'" (change)="setToggle(i, 'LANGUAGES' ,$event)"></mat-slide-toggle>
+                        </div>
+
+                        <div class="delete" (click)="onDeleteLanguage(language, i)">
+                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
             </div>
 
             <!-- Add Details Button  -->
-            <div class="add-more" (click)="onAddLanguage()" style="margin-top: 10px;">
+            <div class="add-more" (click)="onAddLanguage()">
                 <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Language </span>
             </div>
         </mat-tab>
@@ -53,39 +68,50 @@
                 <span class="tech-titles__label"> Programming </span>
             </div>
 
-            <!-- Programming - Framework  -->
-            <div *ngFor="let framework of frameworks; index as i" class="m-list">
-                <!-- Name  -->
-                <div class="form-group" style="margin-top: 0">
-                    <span class="label"> Name </span>
-                    <div class="form-group__input">
-                        <input type="text" [(ngModel)]="framework.name" />
-                    </div>
-                </div>
-
-                <!-- SVG  -->
-                <div class="form-group">
-                    <span class="label"> SVG Link </span>
-                    <div class="form-group__input">
-                        <input type="text" placeholder="Svg Link" [(ngModel)]="framework.link" />
-                    </div>
-                </div>
-
-                <div class="btn-status-delete">
-                    <select [(ngModel)]="framework.active" [ngClass]="{'option-active' : framework.active === 'A', 'option-inactive' : framework.active === 'X'}">
-                            <option value="" selected disabled> Status </option>
-                            <option value="A"> Active </option>
-                            <option value="X"> Inactive </option>
-                        </select>
-
-                    <div class="delete" (click)="onDeleteFramework(framework, i)">
-                        <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
-                    </div>
-                </div>
+            <div class="tech-titles">
+                <span class="muted-text" style="font-style: italic; font-size: 12px; text-transform: none;"> ** Drag item to sort </span>
             </div>
 
+            <!-- Programming - Framework  -->
+            <div [sortablejs]="frameworks">
+                <mat-expansion-panel *ngFor="let framework of frameworks; index as i" class="m-expansion-panel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span *ngIf="framework.name">{{framework.name}}</span>
+                            <span *ngIf="!framework.name" class="muted-text"> Please insert here </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Framework Name</mat-label>
+                            <input [(ngModel)]="framework.name" matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- SVG  -->
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>SVG</mat-label>
+                            <input [(ngModel)]="framework.svg" matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-status-delete">
+                        <div class="slide-toggle">
+                            <mat-slide-toggle [checked]="framework.active === 'A'" (change)="setToggle(i, 'FRAMEWORKS' ,$event)"></mat-slide-toggle>
+                        </div>
+
+                        <div class="delete" (click)="onDeleteLanguage(framework, i)">
+                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+            </div>
+
+
             <!-- Add Details Button  -->
-            <div class="add-more" (click)="onAddFramework()" style="margin-top: 10px;">
+            <div class="add-more" (click)="onAddFramework()">
                 <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Framework </span>
             </div>
 
@@ -99,38 +125,48 @@
                 <span class="tech-titles__label"> Tools </span>
             </div>
 
-            <div *ngFor="let tool of tools; index as i" class="m-list">
-                <!-- Name  -->
-                <div class="form-group" style="margin-top: 0">
-                    <span class="label"> Name </span>
-                    <div class="form-group__input">
-                        <input type="text" [(ngModel)]="tool.name" />
-                    </div>
-                </div>
+            <div class="tech-titles">
+                <span class="muted-text" style="font-style: italic; font-size: 12px; text-transform: none;"> ** Drag item to sort </span>
+            </div>
 
-                <!-- SVG  -->
-                <div class="form-group">
-                    <span class="label"> SVG Link </span>
-                    <div class="form-group__input">
-                        <input type="text" placeholder="Svg Link" [(ngModel)]="tool.link" />
-                    </div>
-                </div>
+            <div [sortablejs]="tools">
+                <mat-expansion-panel *ngFor="let tool of tools; index as i" class="m-expansion-panel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span *ngIf="tool.name">{{tool.name}}</span>
+                            <span *ngIf="!tool.name" class="muted-text"> Please insert here </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
 
-                <div class="btn-status-delete">
-                    <select [(ngModel)]="tool.active" [ngClass]="{'option-active' : tool.active === 'A', 'option-inactive' : tool.active === 'X'}">
-                            <option value="" selected disabled> Status </option>
-                            <option value="A"> Active </option>
-                            <option value="X"> Inactive </option>
-                        </select>
-
-                    <div class="delete" (click)="onDeleteTool(tool, i)">
-                        <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Tool Name</mat-label>
+                            <input [(ngModel)]="tool.name" matInput>
+                        </mat-form-field>
                     </div>
-                </div>
+
+                    <!-- SVG  -->
+                    <div class="form-field">
+                        <mat-form-field appearance="outline">
+                            <mat-label>SVG</mat-label>
+                            <input [(ngModel)]="tool.svg" matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn-status-delete">
+                        <div class="slide-toggle">
+                            <mat-slide-toggle [checked]="tool.active === 'A'" (change)="setToggle(i, 'TOOLS' ,$event)"></mat-slide-toggle>
+                        </div>
+
+                        <div class="delete" (click)="onDeleteLanguage(tool, i)">
+                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
             </div>
 
             <!-- Add Details Button  -->
-            <div class="add-more" (click)="onAddTool()" style="margin-top: 10px;">
+            <div class="add-more" (click)="onAddTool()">
                 <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Tools </span>
             </div>
 

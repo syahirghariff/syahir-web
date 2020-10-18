@@ -154,4 +154,13 @@ export class MProfileComponent implements OnInit {
     });
   }
 
+
+  setToggle(i, event) {
+    if (event.checked) {
+      this.details[i].active = 'A';
+    } else {
+      this.details[i].active = 'X';
+    }
+  }
+
 }

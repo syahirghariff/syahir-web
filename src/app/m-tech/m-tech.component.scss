@@ -44,3 +44,19 @@
     border-radius: 3px;
     // margin-left: 25px;
 }
+
+.ghost-class {
+    background: var(--color-primary-light);
+    color: white !important;
+}
+
+.drag-class {
+    /* smartphones, touchscreens */
+    @media (hover: none) and (pointer: coarse) {
+        display: none;
+    }
+}
+
+.muted-text {
+    color: var(--color-grey-light-4);
+}

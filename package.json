@@ -24,7 +24,9 @@
         "@sweetalert2/theme-borderless": "^3.1.4",
         "jquery": "^3.5.1",
         "ldloader": "^1.0.0",
+        "ngx-sortablejs": "^3.1.4",
         "rxjs": "~6.5.4",
+        "sortablejs": "^1.12.0",
         "sweetalert2": "^9.13.1",
         "tslib": "^1.10.0",
         "zone.js": "~0.10.2"
@@ -37,6 +39,7 @@
         "@types/jasmine": "~3.5.0",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "^12.11.1",
+        "@types/sortablejs": "^1.10.6",
         "codelyzer": "^5.1.2",
         "concat": "^1.0.3",
         "jasmine-core": "~3.5.0",

@@ -25,6 +25,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MEducationComponent } from './m-education/m-education.component';
 import { MTechComponent } from './m-tech/m-tech.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { SortablejsModule } from 'ngx-sortablejs';
+import { MSvgComponent } from './m-svg/m-svg.component';
 
 
 @NgModule({
@@ -39,7 +45,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     LoaderComponent,
     MProfileComponent,
     MEducationComponent,
-    MTechComponent
+    MTechComponent,
+    MSvgComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,11 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatMenuModule,
     MatIconModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSlideToggleModule,
+    MatExpansionModule,
+    SortablejsModule.forRoot({ animation: 150, ghostClass: 'ghost-class', dragClass: 'drag-class' }),
     RouterModule.forRoot([
       { path: '', component: HeadersComponent },
       { path: 'me', component: MeComponent },

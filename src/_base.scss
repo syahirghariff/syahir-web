@@ -17,6 +17,7 @@
     --color-border-line: rgba(63, 233, 198);
     --line-2: 1px solid var(--color-border-line);
     --color-input-border: rgb(125, 142, 163);
+    --color-input-border-2: rgba(125, 142, 163, 0.5);
     --color-active: rgb(3, 204, 154);
     --color-active-background: rgb(225, 250, 244);
     --color-inactive: rgb(255, 12, 150);
@@ -34,6 +35,13 @@ $bp-custom-smallest: 24.37rem; // 390/16
 .border-line {
     width: 100%;
     border-bottom: var(--line);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-grey-dark-1);
+    font-size: 16px !important;
 }
 
 .form-group {
@@ -213,7 +221,7 @@ $bp-custom-smallest: 24.37rem; // 390/16
     padding-left: 5px;
     padding-right: 5px;
     cursor: pointer;
-    width: 100px;
+    width: 50px;
     transition: all .2s;
     font-size: 16px;
     box-shadow: var(--shadow);
@@ -258,10 +266,26 @@ $bp-custom-smallest: 24.37rem; // 390/16
 }
 
 .m-list {
-    border: 1px solid var(--color-input-border);
+    border: 1px solid var(--color-input-border-2);
     padding: 15px;
     margin-bottom: 40px;
     border-radius: 5px;
     box-shadow: var(--shadow);
     background: white;
+}
+
+.m-expansion-panel {
+    border: 1px solid var(--color-input-border-2);
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    background: white;
+    margin-top: 20px !important;
+}
+
+.slide-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin: 0 3px;
 }

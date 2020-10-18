@@ -33,7 +33,7 @@ body {
     background-color: whitesmoke;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: 120vh;
     font-size: 16px;
 }
 
@@ -45,7 +45,6 @@ body {
     border-radius: 3px;
     height: 100%;
     // background-color: rgba(black, 0.2);
-    // padding-bottom: 10px;
     @media only screen and (max-width: $bp-largest) {
         margin: 2rem auto;
         max-width: 95%; // width container is 120rem
@@ -86,8 +85,15 @@ input {
 }
 
 @include mat-core();
-$custom-theme-primary: mat-palette($mat-light-blue, 50);
+$custom-theme-primary: mat-palette($mat-deep-purple, 900);
 $custom-theme-accent:mat-palette($mat-deep-purple, A200, A100, A400);
 $custom-theme-warn: mat-palette($mat-red);
 $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
 @include angular-material-theme($custom-theme);
+// Slide toggle theme 
+$slide-primary: mat-palette($mat-teal, A200);
+$slide-accent: mat-palette($mat-teal, A200, A100, A400);
+$slide-toggle-theme: mat-light-theme($slide-primary, $slide-accent);
+@include mat-slide-toggle-theme($slide-toggle-theme);
+$custom-typography: mat-typography-config( $font-family: '"Baloo 2"');
+@include angular-material-typography($custom-typography);

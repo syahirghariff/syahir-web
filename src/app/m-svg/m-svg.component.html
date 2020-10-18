@@ -1,0 +1,15 @@
+<div class="m-base">
+
+    <div class="form-field form-group">
+        <mat-form-field appearance="fill">
+            <mat-label>Code</mat-label>
+            <textarea matInput [(ngModel)]="svg.desc" style="height:60vh;"></textarea>
+        </mat-form-field>
+    </div>
+
+
+    <!-- Submit button  -->
+    <div class="submit-button" style="margin-top: 10px">
+        <button (click)="onSubmit()"> GENERATE </button>
+    </div>
+</div>

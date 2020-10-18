@@ -106,4 +106,12 @@ export class MEducationComponent implements OnInit {
 
   }
 
+  setToggle(i, event) {
+    if (event.checked) {
+      this.educations[i].active = 'A';
+    } else {
+      this.educations[i].active = 'X';
+    }
+  }
+
 }

@@ -23,42 +23,35 @@
 
 
         <!-- Education Name  -->
-        <div class="form-group ">
-            <span class="label "> 
-                Name
-            </span>
-            <div class="form-group__input ">
-                <input type="text" [(ngModel)]="education.name">
-            </div>
+        <div class="form-field form-group ">
+            <mat-form-field appearance="outline">
+                <mat-label>Education Name </mat-label>
+                <input [(ngModel)]="education.name" matInput>
+            </mat-form-field>
         </div>
 
         <!-- Course  -->
-        <div class="form-group ">
-            <span class="label "> 
-                Course
-            </span>
-            <div class="form-group__input ">
-                <input type="text" [(ngModel)]="education.course">
-            </div>
+        <div class="form-field ">
+            <mat-form-field appearance="outline">
+                <mat-label>Course </mat-label>
+                <input [(ngModel)]="education.course" matInput>
+            </mat-form-field>
         </div>
 
         <!-- Year -->
-        <div class="form-group ">
-            <span class="label "> 
-                Year
-            </span>
-            <div class="form-group__input ">
-                <input type="text" [(ngModel)]="education.year">
-            </div>
+        <div class="form-field ">
+            <mat-form-field appearance="outline">
+                <mat-label>Year </mat-label>
+                <input [(ngModel)]="education.year" matInput>
+            </mat-form-field>
         </div>
 
 
         <div class="btn-status-delete">
-            <select [(ngModel)]="education.active" [ngClass]="{'option-active' : education.active === 'A', 'option-inactive' : education.active === 'X'}"> 
-            <option value="" selected disabled> Status </option> 
-            <option value="A"> Active </option>
-             <option value="X"> Inactive </option>
-        </select>
+
+            <div class="slide-toggle">
+                <mat-slide-toggle [checked]="education.active === 'A'" (change)="setToggle(i, $event)"></mat-slide-toggle>
+            </div>
 
             <div class="delete" (click)="onDelete(education, i)">
                 <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>

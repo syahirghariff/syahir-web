@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Technology } from '../model/technology';
 import { MTechService } from './m-tech.service';
-import Swal from 'sweetalert2/src/sweetalert2.js';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -97,16 +95,25 @@ export class MTechComponent implements OnInit {
 
     const data = new Array();
 
-    this.languages.forEach(value => {
-      data.push(value);
+    Object.entries(this.languages).forEach(([key, value]) => {
+      if (value.name) {
+        value.seq = parseInt(key) + 1;
+        data.push(value);
+      }
     });
 
-    this.frameworks.forEach(value => {
-      data.push(value);
+    Object.entries(this.frameworks).forEach(([key, value]) => {
+      if (value.name) {
+        value.seq = parseInt(key) + 1;
+        data.push(value);
+      }
     });
 
-    this.tools.forEach(value => {
-      data.push(value);
+    Object.entries(this.tools).forEach(([key, value]) => {
+      if (value.name) {
+        value.seq = parseInt(key) + 1;
+        data.push(value);
+      }
     });
 
     if (data.length === 0) {
@@ -166,5 +173,36 @@ export class MTechComponent implements OnInit {
 
   }
 
+  setToggle(i, type, event) {
+    if (event.checked) {
+      switch (type) {
+        case "LANGUAGES":
+          this.languages[i].active = 'A';
+          break;
+
+        case "FRAMEWORKS":
+          this.frameworks[i].active = 'A';
+          break;
+
+        case "TOOLS":
+          this.tools[i].active = 'A';
+          break;
+      }
+    } else {
+      switch (type) {
+        case "LANGUAGES":
+          this.languages[i].active = 'X';
+          break;
+
+        case "FRAMEWORKS":
+          this.frameworks[i].active = 'X';
+          break;
+
+        case "TOOLS":
+          this.tools[i].active = 'X';
+          break;
+      }
+    }
+  }
 
 }

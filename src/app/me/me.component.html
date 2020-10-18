@@ -49,6 +49,11 @@
                     <span> Experience </span>
                 </button>
 
+                <!-- Experience  -->
+                <button mat-menu-item (click)="onMenuClick('svg')">
+                    <span> Generate SVG File </span>
+                </button>
+
                 <!-- Login Trx -->
                 <button mat-menu-item (click)="onMenuClick('loginTrx')">
                     <span> Login Transactions </span>
@@ -81,6 +86,11 @@
         <div class="menu-transition" *ngIf="isTech" id="tech">
             <span class="label-title">Tech </span>
             <app-m-tech></app-m-tech>
+        </div>
+
+        <div class="menu-transition" *ngIf="isSvg" id="svg">
+            <span class="label-title">Generate SVG File  </span>
+            <app-m-svg></app-m-svg>
         </div>
     </div>
 </div>

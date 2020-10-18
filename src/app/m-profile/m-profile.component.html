@@ -1,6 +1,5 @@
 <div class="profile">
 
-
     <!-- Profile Photo  -->
     <div class="form-group">
         <span class="label"> 
@@ -21,32 +20,40 @@
     </div>
 
     <!-- Profile Name  -->
-    <div class="form-group ">
-        <span class="label "> 
-            Name
-        </span>
-        <div class="form-group__input ">
-            <input type="text" [(ngModel)]="name.name">
-        </div>
+    <div class="form-field form-group">
+        <mat-form-field appearance="outline">
+            <mat-label>Display Name </mat-label>
+            <input [(ngModel)]="name.name" matInput>
+        </mat-form-field>
     </div>
 
-
     <!-- Details  -->
-    <div class="form-group" *ngFor="let detail of details; index as i">
+    <div class="m-list" *ngFor="let detail of details; index as i">
         <span class="label"> 
             Details {{i+1}}
         </span>
-        <div class="form-group__input">
-            <input type="text" placeholder="Name" [(ngModel)]="detail.name">
 
-            <select [(ngModel)]="detail.active" [ngClass]="{'option-active' : detail.active === 'A', 'option-inactive' : detail.active === 'X'}"> 
-                <option value="" selected disabled> Status </option> 
-                <option value="A"> Active </option>
-                 <option value="X"> Inactive </option>
-            </select>
+        <!-- Details name  -->
+        <div class="form-field form-group">
+            <mat-form-field appearance="outline">
+                <mat-label>Details Name</mat-label>
+                <input [(ngModel)]="detail.name" matInput>
+            </mat-form-field>
         </div>
-        <div class="form-group__input">
-            <input type="text" placeholder="Svg Link" [(ngModel)]="detail.svg">
+
+        <!-- Details Svg  -->
+        <div class="form-field">
+            <mat-form-field appearance="outline">
+                <mat-label>SVG</mat-label>
+                <input [(ngModel)]="detail.svg" matInput>
+            </mat-form-field>
+        </div>
+
+        <!-- Buttons  -->
+        <div class="btn-status-delete">
+            <div class="slide-toggle">
+                <mat-slide-toggle [checked]="detail.active === 'A'" (change)="setToggle(i, $event)"></mat-slide-toggle>
+            </div>
 
             <div class="delete" (click)="onDelete(detail, i)">
                 <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
@@ -65,3 +72,10 @@
     </div>
 
 </div>
+
+
+<!-- <select [(ngModel)]="detail.active" [ngClass]="{'option-active' : detail.active === 'A', 'option-inactive' : detail.active === 'X'}"> 
+                <option value="" selected disabled> Status </option> 
+                <option value="A"> Active </option>
+                 <option value="X"> Inactive </option>
+            </select> -->

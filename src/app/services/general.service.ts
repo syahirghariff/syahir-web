@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Technology } from '../model/technology';
+import { General } from '../model/general';
 
 @Injectable({
     providedIn: 'root'
 })
-export class MTechService {
+export class GeneralService {
 
     options = {};
 
@@ -16,15 +16,11 @@ export class MTechService {
         }
     }
 
-    doSubmit(data: Array<Technology>) {
-        return this.http.post('/syahirghariff/tech/do_submit', data, this.options);
+    doSubmit(data: General) {
+        return this.http.post('/syahirghariff/general/do_submit', data, this.options);
     }
 
-    findAll() {
-        return this.http.get('/syahirghariff/tech/find_all');
-    }
-
-    deleteById(id) {
-        return this.http.post('/syahirghariff/tech/delete_by_id', id, this.options);
+    findByCode(code) {
+        return this.http.post('/syahirghariff/general/get_by_code', code);
     }
 }
