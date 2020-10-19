@@ -31,6 +31,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SortablejsModule } from 'ngx-sortablejs';
 import { MSvgComponent } from './m-svg/m-svg.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { MSvgComponent } from './m-svg/m-svg.component';
     MEducationComponent,
     MTechComponent,
     MSvgComponent,
+    ExperienceDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { MSvgComponent } from './m-svg/m-svg.component';
     MatInputModule,
     MatSlideToggleModule,
     MatExpansionModule,
+    MatDialogModule,
     SortablejsModule.forRoot({ animation: 150, ghostClass: 'ghost-class', dragClass: 'drag-class' }),
     RouterModule.forRoot([
       { path: '', component: HeadersComponent },

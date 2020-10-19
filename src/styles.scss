@@ -95,5 +95,7 @@ $slide-primary: mat-palette($mat-teal, A200);
 $slide-accent: mat-palette($mat-teal, A200, A100, A400);
 $slide-toggle-theme: mat-light-theme($slide-primary, $slide-accent);
 @include mat-slide-toggle-theme($slide-toggle-theme);
+$test: mat-dark-theme($slide-primary, $slide-accent);
+@include mat-dialog-theme($test);
 $custom-typography: mat-typography-config( $font-family: '"Baloo 2"');
 @include angular-material-typography($custom-typography);
