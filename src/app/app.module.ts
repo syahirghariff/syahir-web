@@ -34,7 +34,6 @@ import { MSvgComponent } from './m-svg/m-svg.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { MExperienceComponent } from './m-experience/m-experience.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { QuillModule } from 'ngx-quill';
 
 
@@ -71,7 +70,6 @@ import { QuillModule } from 'ngx-quill';
     MatSlideToggleModule,
     MatExpansionModule,
     MatDialogModule,
-    CKEditorModule,
     QuillModule.forRoot(),
     SortablejsModule.forRoot({ animation: 150, ghostClass: 'ghost-class', dragClass: 'drag-class' }),
     RouterModule.forRoot([
