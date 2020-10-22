@@ -33,6 +33,9 @@ import { SortablejsModule } from 'ngx-sortablejs';
 import { MSvgComponent } from './m-svg/m-svg.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
+import { MExperienceComponent } from './m-experience/m-experience.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { QuillModule } from 'ngx-quill';
 
 
 @NgModule({
@@ -50,6 +53,7 @@ import { ExperienceDetailsComponent } from './experience-details/experience-deta
     MTechComponent,
     MSvgComponent,
     ExperienceDetailsComponent,
+    MExperienceComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +71,8 @@ import { ExperienceDetailsComponent } from './experience-details/experience-deta
     MatSlideToggleModule,
     MatExpansionModule,
     MatDialogModule,
+    CKEditorModule,
+    QuillModule.forRoot(),
     SortablejsModule.forRoot({ animation: 150, ghostClass: 'ghost-class', dragClass: 'drag-class' }),
     RouterModule.forRoot([
       { path: '', component: HeadersComponent },

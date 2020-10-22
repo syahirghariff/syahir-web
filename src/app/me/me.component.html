@@ -50,7 +50,7 @@
                 </button>
 
                 <!-- Experience  -->
-                <button mat-menu-item (click)="onMenuClick('svg')">
+                <button mat-menu-item (click)="onMenuClick('svg')" ng>
                     <span> Generate SVG File </span>
                 </button>
 
@@ -91,6 +91,11 @@
         <div class="menu-transition" *ngIf="isSvg" id="svg">
             <span class="label-title">Generate SVG File  </span>
             <app-m-svg></app-m-svg>
+        </div>
+
+        <div class="menu-transition" *ngIf="isExperience" id="experience">
+            <span class="label-title"> Job Experience </span>
+            <app-m-experience></app-m-experience>
         </div>
     </div>
 </div>

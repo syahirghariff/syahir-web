@@ -48,12 +48,12 @@ export class MeComponent implements OnInit {
     if (sessUserLoggged) {
       this.isUserLogged = sessionStorage.getItem('userLogged');
     }
-    this.isProfile = false;
+    this.isProfile = true;
     this.isEducation = false;
     this.isTech = false;
     this.isExperience = false;
     this.isLoginTrx = false;
-    this.isSvg = true;
+    this.isSvg = false;
   }
 
   onSubmit(data: MainUser) {
@@ -145,10 +145,14 @@ export class MeComponent implements OnInit {
         this.isSvg = true;
         setTimeout(() => {
           $('#svg').show('250');
-        })
+        });
+        break;
 
       case "experience":
         this.isExperience = true;
+        setTimeout(() => {
+          $('#experience').show('250');
+        })
         break;
 
       case "loginTrx":
