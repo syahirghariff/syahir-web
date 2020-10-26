@@ -10,6 +10,7 @@ export class MExperienceComponent implements OnInit {
 
   data: String;
   config: any;
+  test: any;
 
   constructor() {
     this.data = '<p>Hello, world!</p>';

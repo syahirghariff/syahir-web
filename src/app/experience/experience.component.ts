@@ -17,7 +17,7 @@ export class ExperienceComponent implements OnInit {
   openDialog() {
 
     var dialogProperties = {
-      height: '90%',
+      // height: '90%',
       maxWidth: '110rem',
     }
 
@@ -25,7 +25,7 @@ export class ExperienceComponent implements OnInit {
 
     if (x.matches) {
       dialogProperties = {
-        height: '95%',
+        // height: '95%',
         maxWidth: '95%',
       }
     }

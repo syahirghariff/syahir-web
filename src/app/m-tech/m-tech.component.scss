@@ -50,11 +50,8 @@
     color: white !important;
 }
 
-.drag-class {
-    /* smartphones, touchscreens */
-    @media (hover: none) and (pointer: coarse) {
-        display: none;
-    }
+.fallback-class {
+    display: none;
 }
 
 .muted-text {

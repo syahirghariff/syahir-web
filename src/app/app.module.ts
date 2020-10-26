@@ -35,7 +35,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ExperienceDetailsComponent } from './experience-details/experience-details.component';
 import { MExperienceComponent } from './m-experience/m-experience.component';
 import { QuillModule } from 'ngx-quill';
+import Quill from 'quill';
+import BlotFormatter from 'quill-blot-formatter';
 
+Quill.register('modules/blotFormatter', BlotFormatter);
+
+const quillOptions = [
+  [{ 'size': ['small', false, 'large', 'huge'] }],
+  ['bold', 'italic', 'underline'],
+  [{ 'align': [] }],
+  [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+  ['image'],
+]
 
 @NgModule({
   declarations: [
@@ -70,8 +81,8 @@ import { QuillModule } from 'ngx-quill';
     MatSlideToggleModule,
     MatExpansionModule,
     MatDialogModule,
-    QuillModule.forRoot(),
-    SortablejsModule.forRoot({ animation: 150, ghostClass: 'ghost-class', dragClass: 'drag-class' }),
+    QuillModule.forRoot({ modules: { toolbar: quillOptions, blotFormatter: {} } }),
+    SortablejsModule.forRoot({ animation: 200, ghostClass: 'ghost-class', forceFallback: true, fallbackClass: 'fallback-class' }),
     RouterModule.forRoot([
       { path: '', component: HeadersComponent },
       { path: 'me', component: MeComponent },
