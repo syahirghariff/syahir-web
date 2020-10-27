@@ -42,4 +42,13 @@ export class AlertUtil {
 
     })
   }
+
+
+  error(message) {
+    Swal.fire({
+      icon: 'error',
+      title: ' Something bad happened',
+      text: message
+    });
+  }
 }

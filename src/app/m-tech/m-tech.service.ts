@@ -7,17 +7,11 @@ import { Technology } from '../model/technology';
 })
 export class MTechService {
 
-    options = {};
-
     constructor(private http: HttpClient) {
-        const header = new HttpHeaders().set("Authorization", sessionStorage.getItem('userToken'));
-        this.options = {
-            headers: header
-        }
     }
 
     doSubmit(data: Array<Technology>) {
-        return this.http.post('/syahirghariff/tech/do_submit', data, this.options);
+        return this.http.post('/syahirghariff/tech/do_submit', data);
     }
 
     findAll() {
@@ -25,6 +19,6 @@ export class MTechService {
     }
 
     deleteById(id) {
-        return this.http.post('/syahirghariff/tech/delete_by_id', id, this.options);
+        return this.http.post('/syahirghariff/tech/delete_by_id', id);
     }
 }

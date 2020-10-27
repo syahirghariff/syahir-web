@@ -121,7 +121,6 @@ export class MProfileComponent implements OnInit {
           var res = resp.content;
 
           if (res.length > 0) {
-            console.log('syahir res', res);
 
             res.forEach(value => {
               switch (value.type) {

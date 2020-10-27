@@ -7,18 +7,11 @@ import { Education } from '../model/education';
 })
 export class MEducationService {
 
-    options = {};
-
     constructor(private http: HttpClient) {
-
-        const header = new HttpHeaders().set("Authorization", sessionStorage.getItem('userToken'));
-        this.options = {
-            headers: header
-        }
     }
 
     doSubmit(data: Array<Education>) {
-        return this.http.post('/syahirghariff/education/do_submit', data, this.options);
+        return this.http.post('/syahirghariff/education/do_submit', data);
     }
 
 
@@ -27,6 +20,6 @@ export class MEducationService {
     }
 
     deleteById(id: string) {
-        return this.http.post('/syahirghariff/education/delete_by_id', id, this.options);
+        return this.http.post('/syahirghariff/education/delete_by_id', id);
     }
 }
