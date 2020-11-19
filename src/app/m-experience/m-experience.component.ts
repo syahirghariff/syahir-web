@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Education } from '../model/education';
 import { Job } from '../model/job';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
@@ -16,6 +15,7 @@ export class MExperienceComponent implements OnInit {
   jobs: Array<Job> = new Array();
   showDetail: boolean = false;
   job: Job;
+  deleteAnimate: boolean = false;
 
   constructor(private experiencSvc: MExperienceService, private alertUtil: AlertUtil, private respUtil: ResponseUtil) {
   }
@@ -88,6 +88,9 @@ export class MExperienceComponent implements OnInit {
 
 
     }
+
+
+    this.deleteAnimate = true;
   }
 
   onEditDetail(job, i) {

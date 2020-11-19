@@ -4,6 +4,7 @@
 // @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import '~@angular/material/theming';
 @import '~@sweetalert2/theme-borderless/borderless.scss';
+@import '~animate.css/animate.css';
 * {
     margin: 0;
     padding: 0;
@@ -101,6 +102,10 @@ body {
 input {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+}
+
+::root {
+    --animate-delay: 0.5s;
 }
 
 @include mat-core();
