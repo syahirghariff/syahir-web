@@ -114,42 +114,31 @@ export class MProfileComponent implements OnInit {
   findAll() {
     this.mProfileSvc.findAll().subscribe((resp: any) => {
 
-      switch (resp.status) {
+      this.responseUtil.load(resp.status, () => {
 
-        case "OK":
+        const res = resp.content;
 
-          var res = resp.content;
+        if (res.length > 0) {
 
-          if (res.length > 0) {
+          res.forEach(value => {
+            switch (value.type) {
+              case 'NAME':
+                this.name = new Profile();
+                this.name = value;
+                break;
 
-            res.forEach(value => {
-              switch (value.type) {
-                case 'NAME':
-                  this.name = new Profile();
-                  this.name = value;
-                  break;
+              case 'PHOTO':
+                this.photo = new Profile();
+                this.photo = value;
+                break;
 
-                case 'PHOTO':
-                  this.photo = new Profile();
-                  this.photo = value;
-                  break;
-
-                case 'DETAILS':
-                  this.details.push(value);
-                  break;
-              }
-            });
-          }
-
-          break;
-
-        default:
-          Swal.fire({
-            icon: 'error',
-            title: ' There is problem in loading all data'
+              case 'DETAILS':
+                this.details.push(value);
+                break;
+            }
           });
-
-      }
+        }
+      })
     });
   }
 

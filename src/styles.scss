@@ -40,7 +40,7 @@ body {
 
 // Not sure why use this for dialog not to change color 
 .main-body {
-    min-height: 112rem;
+    min-height: 130rem;
     // height: 100%;
     padding: 9rem 0;
     background-image: linear-gradient(to right bottom, var(--color-primary), var(--color-primary-dark));
@@ -99,7 +99,7 @@ body {
 }
 
 input {
-    font-family: 'Baloo 2', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
 }
 
@@ -116,5 +116,5 @@ $slide-toggle-theme: mat-light-theme($slide-primary, $slide-accent);
 @include mat-slide-toggle-theme($slide-toggle-theme);
 $test: mat-dark-theme($slide-primary, $slide-accent);
 @include mat-dialog-theme($test);
-$custom-typography: mat-typography-config( $font-family: '"Baloo 2"');
+$custom-typography: mat-typography-config( $font-family: 'Roboto');
 @include angular-material-typography($custom-typography);

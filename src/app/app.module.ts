@@ -37,6 +37,7 @@ import { MExperienceComponent } from './m-experience/m-experience.component';
 import { QuillModule } from 'ngx-quill';
 import Quill from 'quill';
 import BlotFormatter from 'quill-blot-formatter';
+import { MExperienceDetailComponent } from './m-experience-detail/m-experience-detail.component';
 
 Quill.register('modules/blotFormatter', BlotFormatter);
 
@@ -64,6 +65,7 @@ const quillOptions = [
     MSvgComponent,
     ExperienceDetailsComponent,
     MExperienceComponent,
+    MExperienceDetailComponent,
   ],
   imports: [
     BrowserModule,

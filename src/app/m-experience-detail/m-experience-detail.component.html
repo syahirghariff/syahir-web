@@ -1,0 +1,26 @@
+<div class="m-list">
+
+    <div class="form-group" style="margin-bottom: 20px;">
+        <div class="label" class="job-title">
+            <span *ngIf="job.companyName"> {{job.companyName}} </span>
+            <span *ngIf="!job.companyName" class="muted-text"> 
+                 Please insert Company Name
+            </span>
+        </div>
+    </div>
+
+    <div class="quill-container">
+        <quill-editor [styles]="{fontSize: '16px', fontFamily: 'Roboto' }" [(ngModel)]="jobDetail.post"></quill-editor>
+    </div>
+
+    <div class="btn-status-delete">
+        <div class="general-btn" (click)="onBack()">
+            <span> Back </span>
+            <svg class="general-btn__icon">
+                <use xlink:href="../../assets/sprite.svg#icon-chevrons-left"></use>
+            </svg>
+        </div>
+    </div>
+
+
+</div>

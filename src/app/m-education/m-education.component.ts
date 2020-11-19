@@ -81,26 +81,11 @@ export class MEducationComponent implements OnInit {
   findAll() {
 
     this.mEducationSvc.findAll().subscribe((resp: any) => {
+      this.responseUtil.load(resp.status, () => {
 
-      switch (resp.status) {
-
-        case "OK":
-
-          var res = resp.content;
-
-          if (res.length > 0) {
-            this.educations = res;
-          }
-
-          break;
-
-        default:
-          Swal.fire({
-            icon: 'error',
-            title: ' There is problem in loading all data'
-          });
-
-      }
+        const res = resp.content;
+        this.educations = res;
+      });
 
     })
 
