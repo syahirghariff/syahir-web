@@ -25,7 +25,7 @@ export class MeComponent implements OnInit {
   isTech: boolean;
   isExperience: boolean;
   isSvg: boolean;
-  isLoginTrx: boolean;
+  isStats: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,7 +52,7 @@ export class MeComponent implements OnInit {
     this.isEducation = false;
     this.isTech = false;
     this.isExperience = false;
-    this.isLoginTrx = false;
+    this.isStats = false;
     this.isSvg = false;
   }
 
@@ -102,7 +102,7 @@ export class MeComponent implements OnInit {
     this.isEducation = false;
     this.isTech = false;
     this.isExperience = false;
-    this.isLoginTrx = false;
+    this.isStats = false;
 
     this.isUserLogged = 'false';
     sessionStorage.clear();
@@ -116,7 +116,7 @@ export class MeComponent implements OnInit {
     this.isEducation = false;
     this.isTech = false;
     this.isExperience = false;
-    this.isLoginTrx = false;
+    this.isStats = false;
     this.isSvg = false;
 
     switch (menu) {
@@ -156,7 +156,7 @@ export class MeComponent implements OnInit {
         break;
 
       case "loginTrx":
-        this.isLoginTrx = true;
+        this.isStats = true;
         break;
 
     }

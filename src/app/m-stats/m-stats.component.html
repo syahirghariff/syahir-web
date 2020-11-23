@@ -1,0 +1,75 @@
+<div class="m-base">
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" style="width: 100%">
+
+            <!-- No -->
+            <ng-container matColumnDef="no">
+                <th mat-header-cell *matHeaderCellDef> No </th>
+                <td mat-cell *matCellDef="let i=index"> {{this.paginator.pageIndex == 0 ? i + 1 : 1 + i + this.paginator.pageIndex * this.paginator.pageSize}}
+                </td>
+            </ng-container>
+
+            <!-- Ip -->
+            <ng-container matColumnDef="ip">
+                <th mat-header-cell *matHeaderCellDef> IP </th>
+                <td mat-cell *matCellDef="let element"> {{element.ip}} </td>
+            </ng-container>
+
+            <!-- City  -->
+            <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef> City </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+
+            <!-- Region  -->
+            <ng-container matColumnDef="region">
+                <th mat-header-cell *matHeaderCellDef> Region </th>
+                <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+            </ng-container>
+
+            <!-- Country  -->
+            <ng-container matColumnDef="country">
+                <th mat-header-cell *matHeaderCellDef> Coountry </th>
+                <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+
+            <!-- Postcode  -->
+            <ng-container matColumnDef="postcode">
+                <th mat-header-cell *matHeaderCellDef> Postcode </th>
+                <td mat-cell *matCellDef="let element"> {{element.postcode}} </td>
+            </ng-container>
+
+            <!-- Internet Provider  -->
+            <ng-container matColumnDef="internetProvider">
+                <th mat-header-cell *matHeaderCellDef> Internet Provider </th>
+                <td mat-cell *matCellDef="let element"> {{element.internetProvider}} </td>
+            </ng-container>
+
+            <!-- Latitude  -->
+            <ng-container matColumnDef="latitude">
+                <th mat-header-cell *matHeaderCellDef> Latitude </th>
+                <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+            </ng-container>
+
+            <!-- Longitude  -->
+            <ng-container matColumnDef="longitude">
+                <th mat-header-cell *matHeaderCellDef> Longitude </th>
+                <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+            </ng-container>
+
+            <!-- Date  -->
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[2,10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

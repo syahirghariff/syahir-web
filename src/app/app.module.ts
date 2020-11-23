@@ -38,6 +38,9 @@ import { QuillModule } from 'ngx-quill';
 import Quill from 'quill';
 import BlotFormatter from 'quill-blot-formatter';
 import { MExperienceDetailComponent } from './m-experience-detail/m-experience-detail.component';
+import { MStatsComponent } from './m-stats/m-stats.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 Quill.register('modules/blotFormatter', BlotFormatter);
 
@@ -66,6 +69,7 @@ const quillOptions = [
     ExperienceDetailsComponent,
     MExperienceComponent,
     MExperienceDetailComponent,
+    MStatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,9 @@ const quillOptions = [
     MatInputModule,
     MatSlideToggleModule,
     MatExpansionModule,
+    MatTableModule,
     MatDialogModule,
+    MatPaginatorModule,
     QuillModule.forRoot({ modules: { toolbar: quillOptions, blotFormatter: {} } }),
     SortablejsModule.forRoot({ animation: 200, ghostClass: 'ghost-class', forceFallback: true, fallbackClass: 'fallback-class' }),
     RouterModule.forRoot([

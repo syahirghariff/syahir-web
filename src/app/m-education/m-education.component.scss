@@ -21,8 +21,7 @@
 }
 
 .edu-photo {
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
     margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
@@ -30,4 +29,9 @@
     justify-content: center;
     overflow: hidden;
     box-shadow: var(--shadow);
+    & img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }

@@ -11,8 +11,7 @@
 }
 
 .profile-photo {
-    width: 13rem;
-    height: 13rem;
+    width: 20rem;
     margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
@@ -20,4 +19,9 @@
     justify-content: center;
     overflow: hidden;
     box-shadow: var(--shadow);
+    & img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }

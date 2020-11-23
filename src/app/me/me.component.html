@@ -56,7 +56,7 @@
 
                 <!-- Login Trx -->
                 <button mat-menu-item (click)="onMenuClick('loginTrx')">
-                    <span> Login Transactions </span>
+                    <span> Stats </span>
                 </button>
 
 
@@ -89,14 +89,21 @@
             <app-m-tech></app-m-tech>
         </div>
 
+        <!-- Page menu - generate svg file  -->
         <div class="menu-transition animate__animated animate__fadeIn animate__faster" *ngIf="isSvg" id="svg">
             <span class="label-title">Generate SVG File  </span>
             <app-m-svg></app-m-svg>
         </div>
 
+        <!-- Page menu - job experience  -->
         <div class="menu-transition animate__animated animate__fadeIn animate__faster" *ngIf="isExperience" id="experience">
             <span class="label-title"> Job Experience </span>
             <app-m-experience></app-m-experience>
+        </div>
+
+        <div class="menu-transition animate__animated animate__fadeIn animate__faster" *ngIf="isStats" id="stats">
+            <span class="label-title"> Stats </span>
+            <app-m-stats></app-m-stats>
         </div>
     </div>
 </div>
