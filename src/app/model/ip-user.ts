@@ -1,4 +1,4 @@
-export interface IpUser {
+export class IpUser {
     ip: string;
     city: string;
     country: string;

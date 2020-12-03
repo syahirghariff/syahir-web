@@ -1,6 +1,83 @@
 <div class="m-base">
 
-    <div class="mat-elevation-z8">
+    <mat-expansion-panel class="m-expansion-panel">
+
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span> Search </span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="text-field-content">
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>IP Address </mat-label>
+                    <input [(ngModel)]="search.ip" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input [(ngModel)]="search.city" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input [(ngModel)]="search.country" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Postcode</mat-label>
+                    <input [(ngModel)]="search.postcode" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Region </mat-label>
+                    <input [(ngModel)]="search.region" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Internet Provider </mat-label>
+                    <input [(ngModel)]="search.internetProvider" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Latitude</mat-label>
+                    <input [(ngModel)]="search.latitude" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Longitude</mat-label>
+                    <input [(ngModel)]="search.longitude" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="text-field">
+                <mat-form-field appearance="fill">
+                    <mat-label>Date </mat-label>
+                    <input [(ngModel)]="search.date" (input)="onSearchCriteria($event)" matInput>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+    </mat-expansion-panel>
+
+    <div class="mat-elevation-z8" style="overflow-y: auto; overflow-x: auto;">
         <table mat-table [dataSource]="dataSource" style="width: 100%">
 
             <!-- No -->
@@ -30,7 +107,7 @@
 
             <!-- Country  -->
             <ng-container matColumnDef="country">
-                <th mat-header-cell *matHeaderCellDef> Coountry </th>
+                <th mat-header-cell *matHeaderCellDef> Country </th>
                 <td mat-cell *matCellDef="let element"> {{element.country}} </td>
             </ng-container>
 
@@ -70,6 +147,6 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
 
-        <mat-paginator [pageSizeOptions]="[2,10, 20]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
     </div>
 </div>

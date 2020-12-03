@@ -1,0 +1,18 @@
+.m-expansion-panel {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.text-field {
+    display: flex;
+    margin: .7rem .7rem;
+    width: 180px;
+    flex-direction: column;
+}
+
+.text-field-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-grow: 1;
+}

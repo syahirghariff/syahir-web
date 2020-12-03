@@ -109,17 +109,32 @@ input {
 }
 
 @include mat-core();
-$custom-theme-primary: mat-palette($mat-deep-purple, 900);
-$custom-theme-accent:mat-palette($mat-deep-purple, A200, A100, A400);
+// 
+// 
+// 
+// Angular material theme
+$custom-theme-primary: mat-palette($mat-light-blue, 500, 700, 900);
+$custom-theme-accent:mat-palette($mat-light-blue, A200, A100, A400);
 $custom-theme-warn: mat-palette($mat-red);
 $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
 @include angular-material-theme($custom-theme);
+//
+//
+//
 // Slide toggle theme 
 $slide-primary: mat-palette($mat-teal, A200);
 $slide-accent: mat-palette($mat-teal, A200, A100, A400);
 $slide-toggle-theme: mat-light-theme($slide-primary, $slide-accent);
 @include mat-slide-toggle-theme($slide-toggle-theme);
+//
+//
+//
+// Dialog popup theme 
 $test: mat-dark-theme($slide-primary, $slide-accent);
 @include mat-dialog-theme($test);
+// 
+// 
+// 
+// Typography for angular material 
 $custom-typography: mat-typography-config( $font-family: 'Roboto');
 @include angular-material-typography($custom-typography);
