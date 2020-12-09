@@ -1,5 +1,5 @@
 <div class="me" *ngIf="isUserLogged==='false'">
-    <div class="me__container">
+    <div class="me__container animate__pulse animate__animated animate__faster">
         <div class="content">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <div class="content-item">
@@ -55,7 +55,7 @@
                 </button>
 
                 <!-- Login Trx -->
-                <button mat-menu-item (click)="onMenuClick('loginTrx')">
+                <button mat-menu-item (click)="onMenuClick('loginTrx')" *ngIf="role==='MASTER'">
                     <span> Stats </span>
                 </button>
 

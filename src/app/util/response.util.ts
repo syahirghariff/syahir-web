@@ -74,4 +74,26 @@ export class ResponseUtil {
         }
 
     }
+
+
+    login(res: any, callBack: any) {
+        switch (res) {
+            case "OK":
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Welcome'
+                }).then((result: any) => {
+                    if (result.value && callBack) {
+                        callBack();
+                    }
+                })
+                break;
+
+            default:
+                Swal.fire({
+                    icon: 'error',
+                    title: ' Ooops!'
+                });
+        }
+    }
 }

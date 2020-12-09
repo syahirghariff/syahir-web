@@ -4,6 +4,8 @@ import { MeService } from './me.service';
 import { MainUser } from '../interface/main-user';
 import { LoaderService } from '../loader/loader.service';
 import Swal from 'sweetalert2/src/sweetalert2.js';
+import { AlertUtil } from '../util/alert.util';
+import { ResponseUtil } from '../util/response.util';
 
 
 declare var $: any;
@@ -26,11 +28,13 @@ export class MeComponent implements OnInit {
   isExperience: boolean;
   isSvg: boolean;
   isStats: boolean;
+  role: string;
 
   constructor(
     private formBuilder: FormBuilder,
     private meSvc: MeService,
-    private loaderSvc: LoaderService
+    private loaderSvc: LoaderService,
+    private responseUtil: ResponseUtil
   ) {
 
     this.loginForm = this.formBuilder.group({
@@ -59,34 +63,22 @@ export class MeComponent implements OnInit {
   onSubmit(data: MainUser) {
     this.meSvc.doLogin(data).subscribe((resp: any) => {
 
-      switch (resp.status) {
+      this.responseUtil.login(resp.status, () => {
 
-        case "OK":
-          var res = resp.content;
+        const res = resp.content;
 
-          if (res.login === true) {
-            Swal.fire({
-              icon: 'success',
-              title: 'Welcome!'
-            })
-            sessionStorage.setItem('userLogged', res.login);
-            sessionStorage.setItem('userToken', res.userToken);
-            this.isUserLogged = sessionStorage.getItem('userLogged');
+        console.log(res);
+        sessionStorage.setItem('userLogged', 'true');
+        sessionStorage.setItem('userToken', res.userToken);
+        sessionStorage.setItem('userRole', res.role);
 
-            window.scrollTo(0, 0)
-          } else {
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...'
-            })
-          }
+        // local
+        this.isUserLogged = sessionStorage.getItem('userLogged');
+        this.role = sessionStorage.getItem('userRole');
 
-          break;
-
-        default:
-          this.loginForm.reset();
-
-      }
+        window.scrollTo(0, 0);
+        //this.loginForm.reset();
+      });
     });
 
   }
@@ -96,16 +88,21 @@ export class MeComponent implements OnInit {
     Swal.fire({
       icon: 'success',
       title: 'Logout Successful!'
+    }).then((result: any) => {
+      if (result.value) {
+        this.isProfile = true;
+        this.isEducation = false;
+        this.isTech = false;
+        this.isExperience = false;
+        this.isStats = false;
+        this.isSvg = false;
+
+        this.isUserLogged = 'false';
+        sessionStorage.clear();
+      }
     })
 
-    this.isProfile = false;
-    this.isEducation = false;
-    this.isTech = false;
-    this.isExperience = false;
-    this.isStats = false;
 
-    this.isUserLogged = 'false';
-    sessionStorage.clear();
 
   }
 

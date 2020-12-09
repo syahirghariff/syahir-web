@@ -6,7 +6,7 @@
         { "id": "21", "type": "LANGUAGE", "name": "TypeScript", "link": "../../assets/sprite.svg#icon-typescript" },
         { "id": "3", "type": "LANGUAGE", "name": "HTML", "link": "../../assets/sprite.svg#icon-html5" },
         { "id": "4", "type": "LANGUAGE", "name": "CSS", "link": "../../assets/sprite.svg#icon-csswizardry" },
-        { "id": "5", "type": "LANGUAGE", "name": "SQL", "link": "../../assets/sprite.svg#icon-database" },
+        { "id": "5", "type": "LANGUAGE", "name": "-", "link": "../../assets/sprite.svg#icon-database" },
         { "id": "6", "type": "LANGUAGE", "name": "Swift", "link": "../../assets/sprite.svg#icon-swift" }
     ],
 

@@ -25,7 +25,7 @@ export class MProfileComponent implements OnInit {
   }
 
   onAddDetails() {
-    let detail: Profile = new Profile('DETAILS', 'A', '../../assets/sprite.svg#');
+    let detail: Profile = new Profile('DETAILS', 'A');
     this.details.push(detail);
   }
 
