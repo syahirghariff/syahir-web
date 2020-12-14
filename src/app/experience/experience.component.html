@@ -6,20 +6,9 @@
 
 
     <div *ngFor="let job of jobs; index as i">
-        <div class="experience" (click)="openDialog()" id="{{'experience' + i}}">
-
-            <!-- <div class="experience-dagangnet">
-        <div class="experience-dagangnet__picture">
-            <img src="../../assets/dagangnet.png" alt="iium" width="210" height="160">
-        </div>
-    </div> -->
+        <div class="experience animate__fadeInDown animate__animated animate__faster" (click)="openDialog(job)" id="{{'experience' + i}}" matRipple>
 
             <div class="experience-content">
-                <!-- <span class="job-title"> DagangNet Technologies Sdn Bhd </span>
-            <span class="job-desc"> Analyst Programmer (Java) </span>
-            <span class="job-desc"> 2018 - Current </span>
-
-            <span class="job-link"> <svg class="job-link__icon"> <use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg></span> -->
                 <span class="job-title"> {{job.companyName}} </span>
                 <span class="job-desc"> {{job.title}} </span>
                 <span class="job-desc"> {{job.year}} </span>

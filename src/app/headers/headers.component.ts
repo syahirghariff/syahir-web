@@ -4,6 +4,7 @@ import { Profile } from '../model/profile';
 import { ResponseUtil } from '../util/response.util';
 import * as _ from "lodash";
 import { Constants } from '../model/constants';
+import { InformationService } from '../services/information.service';
 
 @Component({
   selector: 'app-headers',
@@ -18,12 +19,33 @@ export class HeadersComponent implements OnInit {
 
   readonly constants = Constants;
 
-  constructor(private mProfileSvc: MProfileService, private respUtil: ResponseUtil) {
+  constructor(private mProfileSvc: MProfileService, private respUtil: ResponseUtil, private infoSvc: InformationService) {
 
   }
 
   ngOnInit(): void {
-    this.getDisplay();
+
+    this.init();
+  }
+
+  init() {
+    const content = this.infoSvc.getProfiles();
+
+    _.forEach(content, (value) => {
+      switch (value.type) {
+        case 'NAME':
+          this.name = value;
+          break;
+
+        case 'PHOTO':
+          this.photo = value;
+          break;
+
+        case 'DETAILS':
+          this.details.push(value);
+          break;
+      }
+    })
   }
 
   getDisplay() {

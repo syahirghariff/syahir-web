@@ -8,6 +8,7 @@ import { Job } from '../model/job';
 import { mixinColor } from '@angular/material/core';
 import * as _ from "lodash";
 import { Constants } from '../model/constants';
+import { InformationService } from '../services/information.service';
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
@@ -20,10 +21,17 @@ export class ExperienceComponent implements OnInit {
 
   readonly constants = Constants;
 
-  constructor(private dialog: MatDialog, private mExperienceSvc: MExperienceService, private respUtil: ResponseUtil) { }
+  constructor(private dialog: MatDialog, private mExperienceSvc: MExperienceService, private respUtil: ResponseUtil, private infoSvc: InformationService) { }
 
   ngOnInit(): void {
-    this.getDisplay();
+    this.init();
+  }
+
+  init() {
+    this.jobs = this.infoSvc.getExperience();
+    setTimeout(() => {
+      this.changeBackgroundImg(this.jobs);
+    })
   }
 
   getDisplay() {
@@ -48,11 +56,11 @@ export class ExperienceComponent implements OnInit {
 
   }
 
-  openDialog() {
+  openDialog(job) {
 
     var dialogProperties = {
       maxWidth: '110rem',
-      data: this.jobs[1]
+      data: job
     }
 
     var x = window.matchMedia("(max-width: 75em)");
@@ -60,7 +68,7 @@ export class ExperienceComponent implements OnInit {
     if (x.matches) {
       dialogProperties = {
         maxWidth: '95%',
-        data: this.jobs[1]
+        data: job
       }
     }
 

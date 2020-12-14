@@ -5,6 +5,7 @@ import { Technology } from '../model/technology';
 import { MTechService } from '../m-tech/m-tech.service';
 import { ResponseUtil } from '../util/response.util';
 import * as _ from "lodash";
+import { InformationService } from '../services/information.service';
 
 @Component({
   selector: 'app-technology',
@@ -19,14 +20,34 @@ export class TechnologyComponent implements OnInit {
 
   readonly constants = Constants;
 
-  constructor(private mTechSvc: MTechService, private respUtil: ResponseUtil) {
+  constructor(private mTechSvc: MTechService, private respUtil: ResponseUtil, private infoSvc: InformationService) {
     this.languages = new Array();
     this.frameworks = new Array();
     this.tools = new Array();
   }
 
   ngOnInit(): void {
-    this.getDisplay();
+    this.init();
+  }
+
+  init() {
+    const content = this.infoSvc.getTechs();
+
+    _.forEach(content, (value) => {
+      switch (value.type) {
+        case "LANGUAGES":
+          this.languages.push(value);
+          break;
+
+        case "FRAMEWORKS":
+          this.frameworks.push(value);
+          break;
+
+        case "TOOLS":
+          this.tools.push(value);
+          break;
+      }
+    });
   }
 
   getDisplay = () => {

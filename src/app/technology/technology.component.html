@@ -17,7 +17,7 @@
             <div class="tech-content">
 
                 <!-- Syahir Test -->
-                <div class="tech-list" *ngFor="let language of languages">
+                <div class="tech-list animate__fadeInDown animate__animated animate__faster" *ngFor="let language of languages" matRipple>
                     <div class="tech-list__icon">
                         <svg class="tech-list__icon__item"> <use [attr.xlink:href] = "constants.SVG_PATH+language.svg" ></use></svg>
                     </div>
@@ -34,7 +34,7 @@
             <div class="tech-content">
 
                 <!--  Spring  -->
-                <div class="tech-list" *ngFor="let framework of frameworks">
+                <div class="tech-list animate__fadeInDown animate__animated animate__faster" *ngFor="let framework of frameworks" matRipple>
                     <div class="tech-list__icon">
                         <svg class="tech-list__icon__item"> <use [attr.href] = "constants.SVG_PATH+framework.svg" ></use></svg>
                     </div>
@@ -59,7 +59,7 @@
 
             <!-- Start: Tool -->
             <div class="tech-content">
-                <div class="tech-list tools" *ngFor="let tool of tools">
+                <div class="tech-list tools animate__fadeInDown animate__animated animate__faster" *ngFor="let tool of tools" matRipple>
                     <div class="tech-list__icon">
                         <svg class="tech-list__icon__item"> <use [attr.href] = "constants.SVG_PATH+tool.svg" ></use></svg>
                     </div>
