@@ -24,4 +24,8 @@ export class MProfileService {
     deleteById(id) {
         return this.http.post('/syahirghariff/profile/delete_by_id', id);
     }
+
+    display() {
+        return this.http.get('/syahirghariff/profile/display');
+    }
 }

@@ -17,12 +17,13 @@ export class MExperienceDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('test ', this.job);
     if (this.job.jobDetail) {
 
       if (this.job.jobDetail.post) {
         const post = atob(this.job.jobDetail.post);
         this.job.jobDetail.post = post;
+
+        console.log('post', post);
       }
 
       this.jobDetail = Object.assign({}, this.job.jobDetail);

@@ -59,10 +59,8 @@ export class MExperienceComponent implements OnInit {
 
       this.experiencSvc.doSubmit(this.jobs).subscribe((resp: any) => {
 
-        this.respUtil.response(resp.status, () => {
-
-          const res = resp.content;
-          this.jobs = res;
+        this.respUtil.response(resp, (content) => {
+          this.jobs = content;
         })
 
       });
@@ -78,10 +76,8 @@ export class MExperienceComponent implements OnInit {
 
         this.experiencSvc.deleteById(job.id).subscribe((resp: any) => {
 
-          this.respUtil.response(resp.status, () => {
-
-            const res = resp.content;
-            this.jobs = res;
+          this.respUtil.response(resp, (content) => {
+            this.jobs = content;
           })
         });
       })
@@ -89,26 +85,25 @@ export class MExperienceComponent implements OnInit {
 
     }
 
-
     this.deleteAnimate = true;
   }
 
   onEditDetail(job, i) {
     this.job = job;
     this.showDetail = true;
+    window.scrollTo(0, 0);
   }
 
   onBack(value) {
+    window.scrollTo(0, 0);
     this.showDetail = false;
   }
 
   findAll() {
     this.experiencSvc.findAll().subscribe((resp: any) => {
 
-      this.respUtil.load(resp.status, () => {
-
-        const res = resp.content;
-        this.jobs = res;
+      this.respUtil.load(resp, (content) => {
+        this.jobs = content;
       })
     })
   }

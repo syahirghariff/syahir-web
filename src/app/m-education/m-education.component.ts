@@ -36,10 +36,8 @@ export class MEducationComponent implements OnInit {
 
         this.mEducationSvc.deleteById(education.id).subscribe((resp: any) => {
 
-          this.responseUtil.response(resp.status, () => {
-
-            var res = resp.content;
-            this.educations = res;
+          this.responseUtil.response(resp, (content) => {
+            this.educations = content;
           })
         });
       });
@@ -68,9 +66,8 @@ export class MEducationComponent implements OnInit {
 
       this.mEducationSvc.doSubmit(this.educations).subscribe((resp: any) => {
 
-        this.responseUtil.response(resp.status, () => {
-          var res = resp.content;
-          this.educations = res;
+        this.responseUtil.response(resp, (content: any) => {
+          this.educations = content;
         })
 
       });
@@ -81,10 +78,8 @@ export class MEducationComponent implements OnInit {
   findAll() {
 
     this.mEducationSvc.findAll().subscribe((resp: any) => {
-      this.responseUtil.load(resp.status, () => {
-
-        const res = resp.content;
-        this.educations = res;
+      this.responseUtil.load(resp, (content: any) => {
+        this.educations = content;
       });
 
     })

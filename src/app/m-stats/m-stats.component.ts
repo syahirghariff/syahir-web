@@ -34,10 +34,9 @@ export class MStatsComponent implements OnInit, AfterViewInit {
   findAll() {
     this.mStatsSvc.findAll().subscribe((resp: any) => {
 
-      this.respUtil.load(resp.status, () => {
-        const res = resp.content;
+      this.respUtil.load(resp, (content) => {
 
-        this.ipUsers = res;
+        this.ipUsers = content;
         this.mStatsSvc.setMainList(this.ipUsers);
 
         this.setDataSource(this.ipUsers);

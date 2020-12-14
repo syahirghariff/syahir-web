@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import Swal from 'sweetalert2/src/sweetalert2.js';
+import { Response } from '../model/response';
 
 
 @Injectable({
@@ -7,8 +8,8 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 })
 export class ResponseUtil {
 
-    response(res: any, callBack: any) {
-        switch (res) {
+    response(resp: Response, callBack: any) {
+        switch (resp.status) {
 
             case "OK":
                 Swal.fire({
@@ -17,7 +18,7 @@ export class ResponseUtil {
                 })
 
                 if (callBack) {
-                    callBack();
+                    callBack(resp.content);
                 }
                 break;
 
@@ -44,11 +45,12 @@ export class ResponseUtil {
     }
 
 
-    load(res: any, callBack: any) {
-        switch (res) {
-            case "OK":
+    load(resp: Response, callBack: any) {
+
+        switch (resp.status) {
+            case 'OK':
                 if (callBack) {
-                    callBack();
+                    callBack(resp.content);
                 }
                 break;
 
@@ -69,22 +71,22 @@ export class ResponseUtil {
             default:
                 Swal.fire({
                     icon: 'error',
-                    title: ' There is problem in saving your data'
+                    title: ' There is problem in retrieving data'
                 });
         }
 
     }
 
 
-    login(res: any, callBack: any) {
-        switch (res) {
+    login(resp: Response, callBack: any) {
+        switch (resp.status) {
             case "OK":
                 Swal.fire({
                     icon: 'success',
                     title: 'Welcome'
                 }).then((result: any) => {
                     if (result.value && callBack) {
-                        callBack();
+                        callBack(resp.content);
                     }
                 })
                 break;

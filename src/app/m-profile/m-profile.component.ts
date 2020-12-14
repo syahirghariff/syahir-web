@@ -37,13 +37,11 @@ export class MProfileComponent implements OnInit {
     this.alertUtil.submitOnClick(() => {
       this.mProfileSvc.doSubmit(data).subscribe((resp: any) => {
 
-        this.responseUtil.response(resp.status, () => {
-
-          var res = resp.content;
+        this.responseUtil.response(resp, (content: any) => {
 
           this.details = new Array();
 
-          res.forEach(value => {
+          content.forEach(value => {
             switch (value.type) {
               case 'NAME':
                 this.name = new Profile();
@@ -77,11 +75,10 @@ export class MProfileComponent implements OnInit {
 
         this.mProfileSvc.deleteById(detail.id).subscribe((resp: any) => {
 
-          this.responseUtil.response(resp.status, () => {
+          this.responseUtil.response(resp, (content) => {
 
-            var res = resp.content;
             this.details = new Array();
-            res.forEach(value => {
+            content.forEach(value => {
               switch (value.type) {
                 case 'DETAILS':
                   this.details.push(value);
@@ -114,13 +111,11 @@ export class MProfileComponent implements OnInit {
   findAll() {
     this.mProfileSvc.findAll().subscribe((resp: any) => {
 
-      this.responseUtil.load(resp.status, () => {
+      this.responseUtil.load(resp, (content: any) => {
 
-        const res = resp.content;
+        if (content.length > 0) {
 
-        if (res.length > 0) {
-
-          res.forEach(value => {
+          content.forEach(value => {
             switch (value.type) {
               case 'NAME':
                 this.name = new Profile();

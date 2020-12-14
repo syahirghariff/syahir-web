@@ -43,9 +43,8 @@ export class MTechComponent implements OnInit {
 
         this.mTechSvc.deleteById(language.id).subscribe((resp: any) => {
 
-          this.responseUtil.response(resp.status, () => {
-            const res = resp.content;
-            this.populate(res);
+          this.responseUtil.response(resp, (content) => {
+            this.populate(content);
           })
         });
 
@@ -62,9 +61,8 @@ export class MTechComponent implements OnInit {
 
         this.mTechSvc.deleteById(framework.id).subscribe((resp: any) => {
 
-          this.responseUtil.response(resp.status, () => {
-            const res = resp.content;
-            this.populate(res);
+          this.responseUtil.response(resp, (content) => {
+            this.populate(content);
           })
         });
 
@@ -81,9 +79,8 @@ export class MTechComponent implements OnInit {
 
         this.mTechSvc.deleteById(tool.id).subscribe((resp: any) => {
 
-          this.responseUtil.response(resp.status, () => {
-            const res = resp.content;
-            this.populate(res);
+          this.responseUtil.response(resp, (content) => {
+            this.populate(content);
           })
         });
 
@@ -125,9 +122,8 @@ export class MTechComponent implements OnInit {
 
       this.mTechSvc.doSubmit(data).subscribe((resp: any) => {
 
-        this.responseUtil.response(resp.status, () => {
-          const res = resp.content;
-          this.populate(res);
+        this.responseUtil.response(resp, (content) => {
+          this.populate(content);
         });
 
       })
@@ -137,10 +133,8 @@ export class MTechComponent implements OnInit {
   findAll() {
     this.mTechSvc.findAll().subscribe((resp: any) => {
 
-      this.responseUtil.load(resp.status, () => {
-
-        const res = resp.content;
-        this.populate(res);
+      this.responseUtil.load(resp, (content) => {
+        this.populate(content);
       });
 
     })

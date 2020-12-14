@@ -25,4 +25,8 @@ export class MExperienceService {
     deleteById(id) {
         return this.http.post('/syahirghariff/job/delete_by_id', id);
     }
+
+    display() {
+        return this.http.get('/syahirghariff/job/display');
+    }
 }

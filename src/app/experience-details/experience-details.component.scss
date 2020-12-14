@@ -14,3 +14,7 @@
         fill: var(--color-danger);
     }
 }
+
+:host ::ng-deep img {
+    width: 100%;
+}

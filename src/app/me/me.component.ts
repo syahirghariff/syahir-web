@@ -51,6 +51,7 @@ export class MeComponent implements OnInit {
 
     if (sessUserLoggged) {
       this.isUserLogged = sessionStorage.getItem('userLogged');
+      this.role = sessionStorage.getItem('userRole');
     }
     this.isProfile = true;
     this.isEducation = false;
@@ -63,14 +64,10 @@ export class MeComponent implements OnInit {
   onSubmit(data: MainUser) {
     this.meSvc.doLogin(data).subscribe((resp: any) => {
 
-      this.responseUtil.login(resp.status, () => {
-
-        const res = resp.content;
-
-        console.log(res);
+      this.responseUtil.login(resp, (content) => {
         sessionStorage.setItem('userLogged', 'true');
-        sessionStorage.setItem('userToken', res.userToken);
-        sessionStorage.setItem('userRole', res.role);
+        sessionStorage.setItem('userToken', content.userToken);
+        sessionStorage.setItem('userRole', content.role);
 
         // local
         this.isUserLogged = sessionStorage.getItem('userLogged');

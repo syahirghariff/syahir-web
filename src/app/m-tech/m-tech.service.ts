@@ -21,4 +21,8 @@ export class MTechService {
     deleteById(id) {
         return this.http.post('/syahirghariff/tech/delete_by_id', id);
     }
+
+    display() {
+        return this.http.get('/syahirghariff/tech/display');
+    }
 }

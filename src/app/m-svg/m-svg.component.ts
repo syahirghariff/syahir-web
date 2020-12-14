@@ -32,10 +32,9 @@ export class MSvgComponent implements OnInit {
 
     this.alertUitl.submitOnClick(() => {
       this.generalSvc.doSubmit(data).subscribe((resp: any) => {
-        this.responseUtil.response(resp.status, () => {
-          const res = resp.content;
-          this.svg = res;
-          this.svg.desc = atob(res.desc);
+        this.responseUtil.response(resp, (content) => {
+          this.svg = content;
+          this.svg.desc = atob(content.desc);
         });
       })
     });
@@ -45,11 +44,10 @@ export class MSvgComponent implements OnInit {
 
     this.generalSvc.findByCode('SVG').subscribe((resp: any) => {
 
-      this.responseUtil.load(resp.status, () => {
-        const res = resp.content;
-        if (res) {
-          this.svg = res;
-          this.svg.desc = atob(res.desc);
+      this.responseUtil.load(resp, (content) => {
+        if (content) {
+          this.svg = content;
+          this.svg.desc = atob(content.desc);
         }
 
       });
