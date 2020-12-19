@@ -108,6 +108,32 @@ input {
     --animate-delay: 0.5s;
 }
 
+.navbar-route {
+    background-image: linear-gradient(to left, #434343 0%, black 100%);
+    color: white;
+    justify-content: flex-end;
+    padding: 2px;
+    display: flex;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-route {
+    box-shadow: var(--shadow);
+    font-size: 12px;
+    line-height: 25px !important;
+    display: flex;
+}
+
+.icon-route {
+    fill: var(--color-grey-dark-3);
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+}
+
 @include mat-core();
 // 
 // 

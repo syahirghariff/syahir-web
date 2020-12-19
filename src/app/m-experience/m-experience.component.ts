@@ -3,6 +3,7 @@ import { Job } from '../model/job';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
 import { MExperienceService } from './m-experience.service';
+import { Constants } from '../model/constants';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class MExperienceComponent implements OnInit {
   showDetail: boolean = false;
   job: Job;
   deleteAnimate: boolean = false;
+  readonly constants = Constants;
 
   constructor(private experiencSvc: MExperienceService, private alertUtil: AlertUtil, private respUtil: ResponseUtil) {
   }

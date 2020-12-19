@@ -3,6 +3,8 @@ import { MEducationService } from '../m-education/m-education.service';
 import { Education } from '../model/education';
 import { InformationService } from '../services/information.service';
 import { ResponseUtil } from '../util/response.util';
+import { Constants } from '../model/constants';
+
 
 @Component({
   selector: 'app-education',
@@ -12,6 +14,8 @@ import { ResponseUtil } from '../util/response.util';
 export class EducationComponent implements OnInit {
 
   educations: Array<Education> = new Array();
+
+  readonly constants = Constants;
 
   constructor(private mEducationSvc: MEducationService, private responseUtil: ResponseUtil, private infoSvc: InformationService) { }
 

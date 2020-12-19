@@ -12,7 +12,7 @@
         </div>
 
         <label class="upload-photo" for="profile-photo">
-            <svg class="upload-photo__icon"> <use xlink:href="../../assets/sprite.svg#icon-image"></use></svg><span> Upload Photo </span>
+            <svg class="upload-photo__icon"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-image'"></use></svg><span> Upload Photo </span>
         </label>
 
         <input type="file" accept="image/*" id="profile-photo" class="file-photo" (change)="onUploadImage($event)">
@@ -56,14 +56,14 @@
             </div>
 
             <div class="delete" (click)="onDelete(detail, i)">
-                <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                <svg class="delete__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-clear'"></use></svg>
             </div>
         </div>
     </div>
 
     <!-- Add Details Button  -->
     <div class="add-more" (click)="onAddDetails()">
-        <svg class="add-more__icon"> <use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Details </span>
+        <svg class="add-more__icon"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-plus-circle'"></use></svg> <span> Add Details </span>
     </div>
 
     <!-- Submit button  -->

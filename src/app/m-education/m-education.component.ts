@@ -5,6 +5,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 import { MEducationService } from './m-education.service';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
+import { Constants } from '../model/constants';
 
 @Component({
   selector: 'app-m-education',
@@ -14,6 +15,7 @@ import { ResponseUtil } from '../util/response.util';
 export class MEducationComponent implements OnInit {
 
   educations: Array<Education> = new Array();
+  readonly constants = Constants;
 
   constructor(private mEducationSvc: MEducationService, private alertUtil: AlertUtil, private responseUtil: ResponseUtil) { }
 

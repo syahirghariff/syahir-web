@@ -3,6 +3,7 @@ import { Technology } from '../model/technology';
 import { MTechService } from './m-tech.service';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
+import { Constants } from '../model/constants';
 
 
 @Component({
@@ -15,6 +16,9 @@ export class MTechComponent implements OnInit {
   languages: Array<Technology> = new Array();
   frameworks: Array<Technology> = new Array();
   tools: Array<Technology> = new Array();
+
+  readonly constants = Constants;
+
 
   constructor(private mTechSvc: MTechService, private alertUtil: AlertUtil, private responseUtil: ResponseUtil) { }
 

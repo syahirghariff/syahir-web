@@ -7,7 +7,7 @@
 
             <!-- Mini title  -->
             <div class="tech-titles">
-                <svg class="tech-titles__icon"><use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg>
+                <svg class="tech-titles__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg>
                 <span class="tech-titles__label"> Programming </span>
             </div>
 
@@ -48,7 +48,7 @@
                         </div>
 
                         <div class="delete" (click)="onDeleteLanguage(language, i)">
-                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                            <svg class="delete__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-clear'"></use></svg>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -56,7 +56,7 @@
 
             <!-- Add Details Button  -->
             <div class="add-more" (click)="onAddLanguage()">
-                <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Language </span>
+                <svg class="add-more__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-plus-circle'"></use></svg> <span> Add Language </span>
             </div>
         </mat-tab>
 
@@ -64,7 +64,7 @@
         <mat-tab label="Frameworks">
             <!-- Mini title  -->
             <div class="tech-titles">
-                <svg class="tech-titles__icon"><use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg>
+                <svg class="tech-titles__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg>
                 <span class="tech-titles__label"> Programming </span>
             </div>
 
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="delete" (click)="onDeleteLanguage(framework, i)">
-                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                            <svg class="delete__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-clear'"></use></svg>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -112,7 +112,7 @@
 
             <!-- Add Details Button  -->
             <div class="add-more" (click)="onAddFramework()">
-                <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Framework </span>
+                <svg class="add-more__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-plus-circle'"></use></svg> <span> Add Framework </span>
             </div>
 
         </mat-tab>
@@ -121,7 +121,7 @@
         <mat-tab label="Tools">
             <!-- Tools -->
             <div class="tech-titles">
-                <svg class="tech-titles__icon"><use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg>
+                <svg class="tech-titles__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg>
                 <span class="tech-titles__label"> Tools </span>
             </div>
 
@@ -159,7 +159,7 @@
                         </div>
 
                         <div class="delete" (click)="onDeleteLanguage(tool, i)">
-                            <svg class="delete__icon"><use xlink:href="../../assets/sprite.svg#icon-clear"></use></svg>
+                            <svg class="delete__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-clear'"></use></svg>
                         </div>
                     </div>
                 </mat-expansion-panel>
@@ -167,7 +167,7 @@
 
             <!-- Add Details Button  -->
             <div class="add-more" (click)="onAddTool()">
-                <svg class="add-more__icon"><use xlink:href="../../assets/sprite.svg#icon-plus-circle"></use></svg> <span> Add Tools </span>
+                <svg class="add-more__icon"><use [attr.xlink:href]="constants.SVG_PATH+'icon-plus-circle'"></use></svg> <span> Add Tools </span>
             </div>
 
         </mat-tab>

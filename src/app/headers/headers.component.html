@@ -1,7 +1,6 @@
 <header class="header">
 
     <div class="syahir-photo animate__fadeInDown animate__animated animate__faster">
-        <!-- <img src="../../assets/syahir.JPG" alt="sg-photo" height="100%"> -->
         <img [src]="'data:image/png;base64,' + photo.encodeImg" height="100%" alt="syahir-ghariff" *ngIf="photo.encodeImg">
     </div>
 
@@ -11,10 +10,10 @@
         <div class="border-line"></div>
 
         <div class="syahir-title__job animate__fadeInDown animate__animated animate__faster">
-            <span *ngFor="let detail of details; index as i">
-                <svg class="syahir-title__icon"> <use [attr.xlink:href]="constants.SVG_PATH+detail.svg"></use></svg> 
-                {{detail.name}}
-            </span>
+            <div *ngFor="let detail of details; index as i" class="details_container">
+                <span class="details"> <svg class="syahir-title__icon"> <use [attr.xlink:href]="constants.SVG_PATH+detail.svg"></use></svg> </span>
+                <span class="details"> {{detail.name}} </span>
+            </div>
         </div>
     </div>
 
@@ -22,16 +21,14 @@
     <div class="simple-wallpaper"></div>
 </header>
 
-<nav class="navbar">
-    <!-- <ul class="top-bar">
-        <li> <span> education </span></li>
-        <li> <span> tech </span></li>
-        <li> <span> experience </span></li>
-        <li> <span> contact </span></li>
-        <li> <span class="resume-btn"> resume </span></li>
-    </ul> -->
+<nav class="navbar-route">
+    <button mat-stroked-button color="primary" class="btn-route" routerLink="/me" routerLinkActive="active"> 
+        <span style="float:left"> <svg class="icon-route"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg>   </span>
+        <span style="float:right">Log In</span> 
+     </button>
 </nav>
 
 <app-education></app-education>
 <app-technology></app-technology>
 <app-experience></app-experience>
+<app-footer></app-footer>

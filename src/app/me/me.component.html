@@ -1,14 +1,22 @@
+<nav class="navbar-route" *ngIf="isUserLogged==='false'">
+    <button mat-stroked-button color="primary" class="btn-route" routerLink="" routerLinkActive="active"> 
+        <span style="float:left"> <svg class="icon-route"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg>   </span>
+        <span style="float:right"> Home </span> 
+     </button>
+</nav>
+
+
 <div class="me" *ngIf="isUserLogged==='false'">
     <div class="me__container animate__pulse animate__animated animate__faster">
         <div class="content">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
                 <div class="content-item">
-                    <svg class="content-item__icons"> <use xlink:href="../../assets/sprite.svg#icon-person"></use></svg>
+                    <svg class="content-item__icons"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-person'"></use></svg>
                     <input type="text" placeholder="username" id="username" formControlName="username">
                 </div>
 
                 <div class="content-item">
-                    <svg class="content-item__icons"> <use xlink:href="../../assets/sprite.svg#icon-vpn_key"></use></svg>
+                    <svg class="content-item__icons"> <use [attr.xlink:href]="constants.SVG_PATH+'icon-vpn_key'"></use></svg>
                     <input type="password" placeholder="password" id="password" formControlName="password">
                 </div>
 
@@ -19,6 +27,8 @@
         </div>
     </div>
 </div>
+
+<app-footer *ngIf="isUserLogged==='false'"></app-footer>
 
 <div *ngIf="isUserLogged==='true'">
 
@@ -63,7 +73,7 @@
             </mat-menu>
 
             <button mat-icon-button [matMenuTriggerFor]="appMenu">
-                 <span> <svg> <use xlink:href="../../assets/sprite.svg#icon-zap"></use></svg> </span>
+                 <span> <svg> <use [attr.xlink:href]="constants.SVG_PATH+'icon-zap'"></use></svg> </span>
             </button>
 
             <span class="logout-btn" (click)=onLogout()> Logout </span>

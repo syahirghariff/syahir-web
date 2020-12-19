@@ -5,6 +5,7 @@ import Swal from 'sweetalert2/src/sweetalert2.js';
 import { MProfileService } from './m-profile.service';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
+import { Constants } from '../model/constants';
 
 @Component({
   selector: 'app-m-profile',
@@ -16,6 +17,8 @@ export class MProfileComponent implements OnInit {
   name: Profile = new Profile('NAME', 'A');
   details: Array<Profile> = new Array();
   photo: Profile = new Profile('PHOTO', 'A', '', 'GAMBAR SYAHIR');
+  readonly constants = Constants;
+
 
   constructor(private mProfileSvc: MProfileService, private alertUtil: AlertUtil, private responseUtil: ResponseUtil) {
   }

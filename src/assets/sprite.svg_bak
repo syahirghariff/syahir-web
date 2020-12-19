@@ -6,7 +6,7 @@
 <symbol id="icon-location" viewBox="0 0 32 32">
 <path d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"></path>
 </symbol>
-<symbol id="icon-desktop-windows" viewBox="0 0 24 24">
+<symbol id="icon-desktop_windows" viewBox="0 0 24 24">
 <path d="M21 15.984v-12h-18v12h18zM21 2.016q0.797 0 1.406 0.586t0.609 1.383v12q0 0.797-0.609 1.406t-1.406 0.609h-6.984v2.016h1.969v1.969h-7.969v-1.969h1.969v-2.016h-6.984q-0.797 0-1.406-0.609t-0.609-1.406v-12q0-0.797 0.609-1.383t1.406-0.586h18z"></path>
 </symbol>
 <symbol id="icon-angular" viewBox="0 0 32 32">

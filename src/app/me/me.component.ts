@@ -6,6 +6,7 @@ import { LoaderService } from '../loader/loader.service';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 import { AlertUtil } from '../util/alert.util';
 import { ResponseUtil } from '../util/response.util';
+import { Constants } from '../model/constants';
 
 
 declare var $: any;
@@ -30,6 +31,8 @@ export class MeComponent implements OnInit {
   isStats: boolean;
   role: string;
 
+  readonly constants = Constants;
+
   constructor(
     private formBuilder: FormBuilder,
     private meSvc: MeService,
@@ -38,8 +41,8 @@ export class MeComponent implements OnInit {
   ) {
 
     this.loginForm = this.formBuilder.group({
-      username: null,
-      password: null
+      username: 'test',
+      password: 'password'
     });
 
 
@@ -96,6 +99,7 @@ export class MeComponent implements OnInit {
 
         this.isUserLogged = 'false';
         sessionStorage.clear();
+
       }
     })
 
