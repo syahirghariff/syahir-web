@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './loader/loader.service';
+import { MStatsService } from './m-stats/m-stats.service';
 import { InformationService } from './services/information.service';
 import { ResponseUtil } from './util/response.util';
 
@@ -12,12 +13,19 @@ export class AppComponent implements OnInit {
   title = 'syahir-web';
   ready: boolean = false;
 
-  constructor(private infoSvc: InformationService, private respUtil: ResponseUtil) {
+  constructor(private infoSvc: InformationService, private respUtil: ResponseUtil, private mStatsSvc: MStatsService) {
 
   }
 
   ngOnInit(): void {
     this.getDisplay();
+    this.setApi();
+  }
+
+  setApi() {
+    this.mStatsSvc.getApi().subscribe((resp: any) => {
+      this.mStatsSvc.setApi(resp);
+    });
   }
 
   getDisplay() {

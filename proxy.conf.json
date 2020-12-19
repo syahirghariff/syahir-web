@@ -2,5 +2,11 @@
     "/syahirghariff/*": {
         "target": "http://localhost:8080/",
         "secure": true
+    },
+    "/api": {
+        "target": "https://ipapi.co/json/",
+        "secure": true,
+        "changeOrigin": true,
+        "pathRewrite": { "^/api": "" }
     }
 }

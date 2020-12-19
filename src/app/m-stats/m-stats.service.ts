@@ -21,6 +21,16 @@ export class MStatsService {
         return this.http.get('/syahirghariff/stats/find_all');
     }
 
+    getApi() {
+        return this.http.get('/api');
+    }
+
+    setApi(content: any) {
+        const object = JSON.stringify(content);
+        const data = btoa(object);
+        this.http.post('/syahirghariff/stats/set', data).subscribe((resp: any) => { });
+    }
+
     isSearchEmpty(ipUser: IpUser): boolean {
 
         var result = true;
