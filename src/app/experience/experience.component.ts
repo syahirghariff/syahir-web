@@ -21,6 +21,8 @@ export class ExperienceComponent implements OnInit {
 
   readonly constants = Constants;
 
+  loading: boolean = true;
+
   constructor(private dialog: MatDialog, private mExperienceSvc: MExperienceService, private respUtil: ResponseUtil, private infoSvc: InformationService) { }
 
   ngOnInit(): void {
@@ -37,6 +39,8 @@ export class ExperienceComponent implements OnInit {
   getDisplay() {
 
     this.mExperienceSvc.display().subscribe((resp: any) => {
+
+      this.loading = false;
       this.respUtil.load(resp, (content: any) => {
         this.jobs = content;
         setTimeout(() => {

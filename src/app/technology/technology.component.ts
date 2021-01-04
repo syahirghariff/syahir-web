@@ -17,6 +17,7 @@ export class TechnologyComponent implements OnInit {
   languages: Array<Technology>;
   frameworks: Array<Technology>;
   tools: Array<Technology>;
+  loading: boolean = true;
 
   readonly constants = Constants;
 
@@ -53,6 +54,8 @@ export class TechnologyComponent implements OnInit {
   getDisplay = () => {
 
     this.mTechSvc.display().subscribe((resp: any) => {
+
+      this.loading = false;
       this.respUtil.load(resp, (content: any) => {
         _.forEach(content, (value) => {
           switch (value.type) {

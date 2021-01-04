@@ -12,6 +12,7 @@ import { ResponseUtil } from './util/response.util';
 export class AppComponent implements OnInit {
   title = 'syahir-web';
   ready: boolean = false;
+  loading: boolean = true;
 
   constructor(private infoSvc: InformationService, private respUtil: ResponseUtil, private mStatsSvc: MStatsService) {
 
@@ -20,6 +21,21 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.getDisplay();
     this.setApi();
+    this.checkLoading();
+  }
+
+  checkLoading() {
+    if (!this.ready) {
+      setInterval(() => {
+        const error = sessionStorage.getItem('error');
+        sessionStorage.removeItem('error');
+
+        if (error === 'true') {
+          this.loading = false;
+        }
+
+      }, 1000);
+    }
   }
 
   setApi() {
@@ -33,6 +49,16 @@ export class AppComponent implements OnInit {
       this.respUtil.load(resp, (content: any) => {
         this.infoSvc.setDisplay(content);
         this.ready = true;
+        this.loading = false;
+      });
+    });
+  }
+
+  testConnection() {
+    this.infoSvc.test().subscribe((resp: any) => {
+      this.respUtil.load(resp, (content: any) => {
+        this.ready = true;
+        this.loading = false;
       });
     });
   }

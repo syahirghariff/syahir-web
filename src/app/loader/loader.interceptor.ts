@@ -27,6 +27,7 @@ export class LoaderInterceptor implements HttpInterceptor {
         return next.handle(request).pipe(
             finalize(() => this.loaderSvc.hide()),
             catchError((error: any) => {
+                sessionStorage.setItem('error', 'true');
                 this.alertUtil.error(error.statusText);
                 return throwError(error);
             })

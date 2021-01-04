@@ -19,3 +19,7 @@
     width: 100%;
     border-radius: 5px;
 }
+
+:host ::ng-deep ul {
+    padding: 0 24px;
+}

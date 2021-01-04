@@ -1,5 +1,9 @@
-<header class="header">
+<!-- <div class="progress-loader-mini" *ngIf="loading">
+    <mat-progress-spinner [mode]="'indeterminate'">
+    </mat-progress-spinner>
+</div> -->
 
+<header class="header">
     <div class="syahir-photo animate__fadeInDown animate__animated animate__faster">
         <img [src]="'data:image/png;base64,' + photo.encodeImg" height="100%" alt="syahir-ghariff" *ngIf="photo.encodeImg">
     </div>

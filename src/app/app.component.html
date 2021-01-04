@@ -1,2 +1,9 @@
 <app-loader></app-loader>
+
+
+
+<div class="progress-loader" *ngIf="loading">
+    <mat-progress-spinner [mode]="'indeterminate'">
+    </mat-progress-spinner>
+</div>
 <router-outlet *ngIf="ready"></router-outlet>

@@ -16,6 +16,7 @@ export class HeadersComponent implements OnInit {
   name: Profile = new Profile();
   details: Array<Profile> = new Array();
   photo: Profile = new Profile();
+  loading: boolean = true;
 
   readonly constants = Constants;
 
@@ -24,7 +25,6 @@ export class HeadersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.init();
   }
 
@@ -50,6 +50,8 @@ export class HeadersComponent implements OnInit {
 
   getDisplay() {
     this.mProfileSvc.display().subscribe((resp: any) => {
+
+      this.loading = false;
 
       this.respUtil.load(resp, (content: any) => {
 

@@ -15,6 +15,8 @@ export class EducationComponent implements OnInit {
 
   educations: Array<Education> = new Array();
 
+  loading: boolean = true;
+
   readonly constants = Constants;
 
   constructor(private mEducationSvc: MEducationService, private responseUtil: ResponseUtil, private infoSvc: InformationService) { }
@@ -29,6 +31,8 @@ export class EducationComponent implements OnInit {
 
   getDisplay() {
     this.mEducationSvc.display().subscribe((resp: any) => {
+
+      this.loading = false;
 
       this.responseUtil.load(resp, (content) => {
         this.educations = content;

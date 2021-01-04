@@ -22,7 +22,7 @@ export class MStatsService {
     }
 
     getApi() {
-        return this.http.get('/api');
+        return this.http.get('https://ipapi.co/json/');
     }
 
     setApi(content: any) {

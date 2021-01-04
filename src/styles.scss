@@ -134,6 +134,20 @@ input {
     margin-right: 10px;
 }
 
+.progress-loader-mini {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: #665b7d;
+}
+
 @include mat-core();
 // 
 // 

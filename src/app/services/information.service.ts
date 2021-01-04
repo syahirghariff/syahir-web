@@ -24,6 +24,10 @@ export class InformationService {
         return this.http.get('/syahirghariff/info/display');
     }
 
+    test() {
+        return this.http.get('/syahirghariff/test/api');
+    }
+
     setDisplay(content: any) {
 
         if (content) {
